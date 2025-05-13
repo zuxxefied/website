@@ -108,13 +108,31 @@ body {
     0 0 40px rgba(255, 122, 0, 0.2); /* Strongest outer glow */
 }
 
+.starts-here, .lol {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  letter-spacing: -1px;
+  display: inline;
+  font-size: inherit;
+}
 .starts-here {
   font-family: 'Glossarye', sans-serif; /* Regular sans-serif font */
 }
 
+
+
 .lol {
-  font-family: 'Glossarye', serif; /* Regular sans-serif font */
+  font-family: 'Glossarye', ui-rounded; /* Your desired font */
   font-style: italic;
+  position: relative;
+  left: -25px; /* Adjust spacing as needed */
+  color: #ffffff;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.3),
+    0 0 40px rgba(255, 255, 255, 0.2);
 }
 
 .real, .art, .starts-here {
