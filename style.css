@@ -94,10 +94,6 @@ body {
   line-height: 1; /* Ensure no extra space between lines of text */
 }
 
-.real, .art, .starts-here {
-  margin: 0; /* Remove any default margin from the spans */
-  padding: 0; /* Remove any padding */
-  line-height: 1; /* Keep the line height tight between the words */
 
 .real {
   font-family: 'Glossary', sans-serif; /* Regular sans-serif font */
@@ -113,6 +109,11 @@ body {
 .starts-here {
   font-family: 'Glossarye', sans-serif; /* Regular sans-serif font */
 }
+
+.real, .art, .starts-here {
+  margin: 0; /* Remove any default margin from the spans */
+  padding: 0; /* Remove any padding */
+  line-height: 1; /* Keep the line height tight between the words */
 
 .hero h2 {
   font-size: 1.5rem;
