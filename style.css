@@ -45,6 +45,8 @@ body {
 }
 
 .nav-btn:hover {
+  font-family: 'Glossary', serif; /* Italic serif font */
+  font-style: italic;
   background-color: rgba(255, 122, 0, 0.15); /* Hover color adjusted */
   box-shadow:
     0 0 6px rgba(255, 122, 0, 0.5), /* Hover shadow color adjusted */
