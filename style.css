@@ -113,7 +113,7 @@ body {
 .real, .art, .starts-here {
   margin: 0; /* Remove any default margin from the spans */
   padding: 0; /* Remove any padding */
-  line-height: 1; /* Keep the line height tight between the words */
+  line-height: 0; /* Keep the line height tight between the words */
 
 .hero h2 {
   font-size: 1.5rem;
