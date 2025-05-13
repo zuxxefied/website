@@ -15,19 +15,7 @@ body {
   padding: 40px;
 }
 
-.hero {
-  margin-top: 60px;
-  text-align: center;
-}
-
-footer {
-  margin-top: auto;
-  padding: 1rem;
-  font-size: 14px;
-}
-}
-
-/* ===== Glowing Glass Navbar Container ===== */
+/* ===== Glass Navbar ===== */
 .glass-navbar {
   display: flex;
   align-items: center;
@@ -41,9 +29,10 @@ footer {
     0 0 10px rgba(255, 77, 227, 0.3),
     0 0 25px rgba(255, 77, 227, 0.2),
     0 0 45px rgba(255, 77, 227, 0.1);
+  margin-bottom: 40px;
 }
 
-/* ===== Navigation Text Buttons ===== */
+/* ===== Nav Text Buttons ===== */
 .nav-btn {
   background-color: rgba(255, 255, 255, 0.08);
   border: none;
@@ -62,7 +51,7 @@ footer {
     0 0 12px rgba(255, 77, 227, 0.3);
 }
 
-/* ===== Icon Buttons (Left & Right Side) ===== */
+/* ===== Icon Buttons ===== */
 .icon-btn {
   background-color: rgba(255, 255, 255, 0.08);
   border: none;
@@ -86,4 +75,27 @@ footer {
   width: 20px;
   height: 20px;
   filter: drop-shadow(0 0 5px rgba(255, 77, 227, 0.4));
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 60px;
+  font-size: 14px;
+  color: #ccc;
 }
