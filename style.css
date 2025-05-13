@@ -15,7 +15,7 @@ body {
   padding: 40px;
 }
 
-/* ===== Glass Navbar - Desktop ===== */
+/* ===== Glass Navbar ===== */
 .glass-navbar {
   display: flex;
   align-items: center;
@@ -32,6 +32,7 @@ body {
   margin-bottom: 40px;
 }
 
+/* ===== Nav Text Buttons ===== */
 .nav-btn {
   background-color: rgba(255, 255, 255, 0.08);
   border: none;
@@ -44,15 +45,16 @@ body {
 }
 
 .nav-btn:hover {
-  font-family: 'Glossary', serif;
+  font-family: 'Glossary', serif; /* Italic serif font */
   font-style: italic;
   font-weight: bold;
-  background-color: rgba(255, 122, 0, 0.15);
+  background-color: rgba(255, 122, 0, 0.15); /* Hover color adjusted */
   box-shadow:
-    0 0 6px rgba(255, 122, 0, 0.5),
-    0 0 12px rgba(255, 122, 0, 0.3);
+    0 0 6px rgba(255, 122, 0, 0.5), /* Hover shadow color adjusted */
+    0 0 12px rgba(255, 122, 0, 0.3); /* Hover shadow color adjusted */
 }
 
+/* ===== Icon Buttons ===== */
 .icon-btn {
   background-color: rgba(255, 255, 255, 0.08);
   border: none;
@@ -66,19 +68,20 @@ body {
 }
 
 .icon-btn:hover {
-  background-color: rgba(255, 122, 0, 0.15);
+  background-color: rgba(255, 122, 0, 0.15); /* Hover color adjusted */
   box-shadow:
-    0 0 6px rgba(255, 122, 0, 0.5),
-    0 0 14px rgba(255, 122, 0, 0.3);
+    0 0 6px rgba(255, 122, 0, 0.5), /* Hover shadow color adjusted */
+    0 0 14px rgba(255, 122, 0, 0.3); /* Hover shadow color adjusted */
 }
 
+/* Logo Size (Icon Button) */
 .icon-btn img {
-  width: 30px;
-  height: 30px;
-  filter: drop-shadow(0 0 5px rgba(255, 122, 0, 0.4));
+  width: 40px; /* Default size for desktop */
+  height: 40px; /* Default size for desktop */
+  filter: drop-shadow(0 0 5px rgba(255, 122, 0, 0.4)); /* Icon shadow */
 }
 
-/* ===== Hero Section ===== */
+/* Hero Section */
 .hero {
   margin-top: 60px;
   text-align: center;
@@ -95,17 +98,18 @@ body {
   line-height: 1;
 }
 
+/* Animating the 'art' text */
 .art {
-  font-family: 'Glossary', serif;
+  font-family: 'Glossary', serif; /* Italic serif font */
   font-style: italic;
   font-size: 10rem;
-  font-weight: 900;
-  color: #ff7a00;
+  font-weight: 900; /* Make it bold if needed */
+  color: #ff7a00; /* Main color */
   text-shadow: 
-    0 0 10px rgba(255, 122, 0, 0.5),
-    0 0 20px rgba(255, 122, 0, 0.4),
-    0 0 30px rgba(255, 122, 0, 0.3),
-    0 0 40px rgba(255, 122, 0, 0.2);
+    0 0 10px rgba(255, 122, 0, 0.5), /* Outer glow */
+    0 0 20px rgba(255, 122, 0, 0.4), /* Stronger outer glow */
+    0 0 30px rgba(255, 122, 0, 0.3), /* Stronger outer glow */
+    0 0 40px rgba(255, 122, 0, 0.2); /* Strongest outer glow */
 }
 
 .starts-here, .lol {
@@ -118,14 +122,14 @@ body {
 }
 
 .starts-here {
-  font-family: 'Glossarye', sans-serif;
+  font-family: 'Glossarye', sans-serif; /* Regular sans-serif font */
 }
 
 .lol {
-  font-family: 'Glossarye', ui-rounded;
+  font-family: 'Glossarye', ui-rounded; /* Your desired font */
   font-style: italic;
   position: relative;
-  left: -25px;
+  left: -25px; /* Adjust spacing as needed */
   color: #ffffff;
   text-shadow: 
     0 0 10px rgba(255, 255, 255, 0.5),
@@ -135,81 +139,83 @@ body {
 }
 
 .real, .art, .starts-here {
-  margin: 0;
-  padding: 0;
-  line-height: 0.9;
-  letter-spacing: -0.5px;
+  margin: 0; /* Remove any default margin from the spans */
+  padding: 0; /* Remove any padding */
+  line-height: 0.9; /* Reduce line-height to make text more compact */
+  letter-spacing: -0.5px; /* Reduce space between letters */
 }
 
+/* Hero h2 Text */
 .hero h2 {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   color: #ff7a00;
 }
 
-/* ===== Footer ===== */
+/* Footer */
 footer {
   margin-top: 60px;
   font-size: 14px;
   color: #ff7a00;
 }
 
-/* ===== Mobile Styles ===== */
+/* ===== Mobile Adjustments ===== */
 @media (max-width: 768px) {
-  .desktop-nav {
-    display: none !important;
-  }
-
-  .mobile-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 24px;
-    width: 100%;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(14px);
-    box-shadow:
-      0 0 10px rgb(255 167 77 / 30%),
-      0 0 25px rgba(255, 122, 0, 0.2),
-      0 0 45px rgba(255, 122, 0, 0.1);
-    margin-bottom: 30px;
-  }
-
-  .mobile-logo {
-    width: 40px;
-    height: auto;
-    filter: brightness(0) invert(1);
-  }
-
-  .menu-icon {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
-  }
-
-  .hero {
-    height: auto;
-    margin-top: 40px;
-    padding: 20px;
+  .icon-btn img {
+    width: 60px;  /* Larger logo on mobile */
+    height: 60px;
   }
 
   .hero h1 {
-    font-size: 3rem;
+    font-size: 4rem; /* Adjust font size for smaller screens */
   }
 
   .art {
-    font-size: 6rem;
+    font-size: 8rem; /* Adjust font size for smaller screens */
   }
 
-  .starts-here, .lol {
-    font-size: 2.5rem;
+  .starts-here {
+    font-size: 3rem; /* Adjust font size for smaller screens */
   }
 
-  footer {
-    font-size: 12px;
+  .lol {
+    font-size: 3rem; /* Adjust font size for smaller screens */
+  }
+
+  /* Menu icon for mobile */
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-btn {
+    display: none; /* Hide nav buttons on mobile */
+  }
+
+  .glass-navbar {
+    justify-content: center; /* Center the items in the navbar */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further size adjustments for small screens */
+  .icon-btn img {
+    width: 50px; /* Slightly smaller logo on very small screens */
+    height: 50px;
+  }
+
+  .hero h1 {
+    font-size: 3rem; /* Smaller font size on very small screens */
+  }
+
+  .art {
+    font-size: 6rem; /* Smaller font size on very small screens */
+  }
+
+  .starts-here {
+    font-size: 2rem; /* Smaller font size on very small screens */
+  }
+
+  .lol {
+    font-size: 2rem; /* Smaller font size on very small screens */
   }
 }
