@@ -53,3 +53,64 @@ footer {
   text-align: center;
   border-top: 1px solid #eee;
 }
+
+/* Glass Navbar Container */
+.glass-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 50px;
+  width: fit-content;
+  margin: 40px auto;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Buttons */
+.nav-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Icon Buttons */
+.icon-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.icon-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Optional: background color for testing */
+body {
+  background: #000; /* or dark image */
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+}
