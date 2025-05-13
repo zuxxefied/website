@@ -55,7 +55,7 @@ body {
 .icon-btn {
   background-color: rgba(255, 255, 255, 0.08);
   border: none;
-  padding: 12px;
+  padding: 10px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -72,8 +72,8 @@ body {
 }
 
 .icon-btn img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   filter: drop-shadow(0 0 5px rgba(255, 122, 0, 0.4)); /* Icon shadow adjusted */
 }
 
