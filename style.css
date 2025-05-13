@@ -20,9 +20,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  gap: 12px;
   padding: 12px 24px;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.05);
@@ -33,6 +30,35 @@ body {
     0 0 25px rgba(255, 122, 0, 0.2),
     0 0 45px rgba(255, 122, 0, 0.1);
   margin-bottom: 40px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+/* ===== Nav Buttons ===== */
+.nav-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  font-family: 'Glossary', serif;
+  font-style: italic;
+  font-weight: bold;
+  background-color: rgba(255, 122, 0, 0.15);
+  box-shadow:
+    0 0 6px rgba(255, 122, 0, 0.5),
+    0 0 12px rgba(255, 122, 0, 0.3);
 }
 
 /* ===== Logo Button ===== */
@@ -48,36 +74,10 @@ body {
   transition: all 0.3s ease;
 }
 
-.icon-btn:hover {
-  background-color: rgba(255, 122, 0, 0.15);
-  box-shadow:
-    0 0 6px rgba(255, 122, 0, 0.5),
-    0 0 14px rgba(255, 122, 0, 0.3);
-}
-
 .icon-btn img {
   width: 40px;
   height: 40px;
-}
-
-/* ===== Menu Icon ===== */
-.menu-icon {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
-  margin-left: auto;
-  transition: color 0.3s ease;
-}
-
-.menu-icon:hover {
-  color: #ff7a00;
-}
-
-/* ===== Hide nav buttons ===== */
-.nav-btn {
-  display: none;
+  filter: drop-shadow(0 0 5px rgba(255, 122, 0, 0.4));
 }
 
 /* ===== Hero Section ===== */
@@ -92,32 +92,31 @@ body {
 }
 
 .hero h1 {
-  font-size: 5rem;
+  font-size: 6rem;
   margin-bottom: 0.5rem;
   line-height: 1;
 }
 
-.real,
-.art,
-.starts-here {
-  margin: 0;
-  padding: 0;
-  line-height: 0.9;
-  letter-spacing: -0.5px;
-}
-
-/* ===== Dynamic 'Art' Text ===== */
 .art {
   font-family: 'Glossary', serif;
   font-style: italic;
   font-size: 10rem;
   font-weight: 900;
   color: #ff7a00;
-  text-shadow:
+  text-shadow: 
     0 0 10px rgba(255, 122, 0, 0.5),
     0 0 20px rgba(255, 122, 0, 0.4),
     0 0 30px rgba(255, 122, 0, 0.3),
     0 0 40px rgba(255, 122, 0, 0.2);
+}
+
+.starts-here, .lol {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  letter-spacing: -1px;
+  display: inline;
+  font-size: inherit;
 }
 
 .starts-here {
@@ -137,17 +136,13 @@ body {
     0 0 40px rgba(255, 255, 255, 0.2);
 }
 
-.starts-here,
-.lol {
+.real, .art, .starts-here {
   margin: 0;
   padding: 0;
-  line-height: 1;
-  letter-spacing: -1px;
-  display: inline;
-  font-size: inherit;
+  line-height: 0.9;
+  letter-spacing: -0.5px;
 }
 
-/* ===== Hero Subtitle (if needed) ===== */
 .hero h2 {
   font-size: 1.5rem;
   margin-top: 0.5rem;
@@ -161,22 +156,26 @@ footer {
   color: #ff7a00;
 }
 
-/* ===== Responsive Styles ===== */
-@media screen and (max-width: 768px) {
-  .hero h1 {
-    font-size: 3.5rem;
-  }
-
-  .art {
-    font-size: 6rem;
-  }
-
-  .icon-btn img {
-    width: 30px;
-    height: 30px;
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
   }
 
   .glass-navbar {
-    padding: 10px 20px;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .art {
+    font-size: 5rem;
+  }
+
+  .icon-btn img {
+    width: 35px;
+    height: 35px;
   }
 }
