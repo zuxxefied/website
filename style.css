@@ -98,7 +98,7 @@ body {
 }
 
 .starts-here {
-  font-family: 'Arial', sans-serif; /* Italic sans-serif font */
+  font-family: 'Glossary', serif; /* Italic sans-serif font */
   font-style: italic;
   font-weight: 700; /* Make it bold if needed */
   color: rgba(255, 77, 227, 1); /* Optional: different color for emphasis */
