@@ -47,6 +47,7 @@ body {
 .nav-btn:hover {
   font-family: 'Glossary', serif; /* Italic serif font */
   font-style: italic;
+  font-weight: bold;
   background-color: rgba(255, 122, 0, 0.15); /* Hover color adjusted */
   box-shadow:
     0 0 6px rgba(255, 122, 0, 0.5), /* Hover shadow color adjusted */
@@ -99,7 +100,7 @@ body {
 /* Animating the 'art' text */
 .art {
   font-family: 'Glossary', serif; /* Italic serif font */
-  font-style: italic, bold;
+  font-style: italic;
   font-size: 10rem;
   font-weight: 900; /* Make it bold if needed */
   color: #ff7a00; /* Main color */
