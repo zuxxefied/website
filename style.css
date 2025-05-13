@@ -1,3 +1,68 @@
+/* ===== Mobile Styles (768px and below) ===== */
+@media (max-width: 768px) {
+  /* Hide desktop nav */
+  .desktop-nav {
+    display: none !important;
+  }
+
+  /* Show mobile nav */
+  .mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    width: 100%;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(14px);
+    box-shadow:
+      0 0 10px rgb(255 167 77 / 30%),
+      0 0 25px rgba(255, 122, 0, 0.2),
+      0 0 45px rgba(255, 122, 0, 0.1);
+    margin-bottom: 30px;
+  }
+
+  .mobile-logo {
+    width: 40px;
+    height: auto;
+    filter: brightness(0) invert(1); /* Make dark logo white */
+  }
+
+  .menu-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  /* Resize hero section for small screens */
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .art {
+    font-size: 6rem;
+  }
+
+  .starts-here, .lol {
+    font-size: 2.5rem;
+  }
+
+  .hero {
+    height: auto;
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+
+
 /* ===== Reset and Base Styles ===== */
 * {
   margin: 0;
