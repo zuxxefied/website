@@ -89,7 +89,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 3rem; /* Make the text big */
+  font-size: 5rem; /* Make the text big */
   margin-bottom: 1rem;
 }
 
@@ -98,7 +98,6 @@ body {
 }
 
 .art {
-  .starts-here {
   font-family: 'Glossary', serif; /* Italic sans-serif font */
   font-style: italic;
   font-weight: 700; /* Make it bold if needed */
