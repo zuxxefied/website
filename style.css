@@ -77,21 +77,39 @@ body {
   filter: drop-shadow(0 0 5px rgba(255, 77, 227, 0.4));
 }
 
-/* ===== Hero Section ===== */
+/* Hero Section */
 .hero {
   margin-top: 60px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
 }
 
 .hero h1 {
-  font-size: 2rem;
+  font-size: 3rem; /* Make the text big */
   margin-bottom: 1rem;
+}
+
+.real-art {
+  font-family: 'Helvetica Neue', sans-serif; /* Regular sans-serif font */
+}
+
+.starts-here {
+  font-family: 'Arial', sans-serif; /* Italic sans-serif font */
+  font-style: italic;
+  font-weight: 700; /* Make it bold if needed */
+  color: rgba(255, 77, 227, 1); /* Optional: different color for emphasis */
 }
 
 .hero h2 {
   font-size: 1.5rem;
   margin-top: 0.5rem;
+  color: white;
 }
+
 
 /* ===== Footer ===== */
 footer {
