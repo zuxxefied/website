@@ -13,4 +13,4 @@ let currentWordIndex = 0;
 setInterval(() => {
   artText.textContent = words[currentWordIndex];
   currentWordIndex = (currentWordIndex + 1) % words.length;
-}, 500); // Change text every 3 seconds
+}, 100); // Change text every 3 seconds
