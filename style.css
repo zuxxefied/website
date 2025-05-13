@@ -114,3 +114,82 @@ body {
   color: white;
   font-family: 'Helvetica Neue', sans-serif;
 }
+
+/* ===== Base Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f0f; /* dark background */
+  font-family: 'Helvetica Neue', sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ===== Glass Navbar Container ===== */
+.glass-navbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 10px rgba(255, 77, 227, 0.3),
+    0 0 25px rgba(255, 77, 227, 0.2),
+    0 0 45px rgba(255, 77, 227, 0.1);
+}
+
+/* ===== Buttons (Text) ===== */
+.nav-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 77, 227, 0.15);
+  box-shadow:
+    0 0 6px rgba(255, 77, 227, 0.5),
+    0 0 12px rgba(255, 77, 227, 0.3);
+}
+
+/* ===== Icon Buttons ===== */
+.icon-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  background-color: rgba(255, 77, 227, 0.15);
+  box-shadow:
+    0 0 6px rgba(255, 77, 227, 0.5),
+    0 0 14px rgba(255, 77, 227, 0.3);
+}
+
+.icon-btn img {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 5px rgba(255, 77, 227, 0.4));
+}
+
