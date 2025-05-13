@@ -99,7 +99,7 @@ body {
 /* Animating the 'art' text */
 .art {
   font-family: 'Glossary', serif; /* Italic serif font */
-  font-style: italic;
+  font-style: italic, bold;
   font-size: 10rem;
   font-weight: 900; /* Make it bold if needed */
   color: #ff7a00; /* Main color */
