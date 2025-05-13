@@ -1,16 +1,23 @@
-// You can add scroll animations or a preloader here later
-
+// ===== Scroll animation placeholder =====
 window.addEventListener('scroll', () => {
-  // Placeholder: Add any scroll-based animation logic
+  // Add any scroll-based animations here
 });
 
-// JavaScript to dynamically change the text
+// ===== Dynamic "art" word rotation =====
 const artText = document.querySelector('.art');
 const words = ["Art", "Fun", "Inspiration", "Work"];
 let currentWordIndex = 0;
 
-// Function to change the text every 3 seconds
 setInterval(() => {
   artText.textContent = words[currentWordIndex];
   currentWordIndex = (currentWordIndex + 1) % words.length;
-}, 250); // Change text every 3 seconds
+}, 250);
+
+// ===== Mobile Menu Toggle (Optional Expansion) =====
+const menuIcon = document.querySelector('.menu-icon');
+
+menuIcon.addEventListener('click', () => {
+  alert("Menu button clicked! You can build a sliding menu or modal here.");
+  // Or dynamically toggle a menu, e.g.:
+  // document.querySelector('.mobile-menu').classList.toggle('open');
+});
