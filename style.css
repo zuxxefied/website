@@ -26,9 +26,9 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(14px);
   box-shadow:
-    0 0 10px rgba(255, 77, 227, 0.3),
-    0 0 25px rgba(255, 77, 227, 0.2),
-    0 0 45px rgba(255, 77, 227, 0.1);
+    0 0 10px rgb(255 167 77 / 30%),
+    0 0 25px rgba(255, 122, 0, 0.2), /* Adjusted to match #ff7a00 */
+    0 0 45px rgba(255, 122, 0, 0.1); /* Adjusted to match #ff7a00 */
   margin-bottom: 40px;
 }
 
@@ -45,10 +45,10 @@ body {
 }
 
 .nav-btn:hover {
-  background-color: rgba(255, 77, 227, 0.15);
+  background-color: rgba(255, 122, 0, 0.15); /* Hover color adjusted */
   box-shadow:
-    0 0 6px rgba(255, 77, 227, 0.5),
-    0 0 12px rgba(255, 77, 227, 0.3);
+    0 0 6px rgba(255, 122, 0, 0.5), /* Hover shadow color adjusted */
+    0 0 12px rgba(255, 122, 0, 0.3); /* Hover shadow color adjusted */
 }
 
 /* ===== Icon Buttons ===== */
@@ -65,16 +65,16 @@ body {
 }
 
 .icon-btn:hover {
-  background-color: rgba(255, 77, 227, 0.15);
+  background-color: rgba(255, 122, 0, 0.15); /* Hover color adjusted */
   box-shadow:
-    0 0 6px rgba(255, 77, 227, 0.5),
-    0 0 14px rgba(255, 77, 227, 0.3);
+    0 0 6px rgba(255, 122, 0, 0.5), /* Hover shadow color adjusted */
+    0 0 14px rgba(255, 122, 0, 0.3); /* Hover shadow color adjusted */
 }
 
 .icon-btn img {
   width: 20px;
   height: 20px;
-  filter: drop-shadow(0 0 5px rgba(255, 77, 227, 0.4));
+  filter: drop-shadow(0 0 5px rgba(255, 122, 0, 0.4)); /* Icon shadow adjusted */
 }
 
 /* Hero Section */
@@ -100,10 +100,16 @@ body {
 }
 
 .art {
-  font-family: 'Glossary', serif; /* Italic sans-serif font */
+  font-family: 'Glossary', serif; /* Italic serif font */
   font-style: italic;
-  font-weight: 700; /* Make it bold if needed */
-  font-size: 6.5rem;
+  font-size: 10rem;
+  font-weight: 900; /* Make it bold if needed */
+  color: #ff7a00; /* Main color */
+  text-shadow: 
+    0 0 10px rgba(255, 122, 0, 0.5),   /* Outer glow */
+    0 0 20px rgba(255, 122, 0, 0.4),   /* Stronger outer glow */
+    0 0 30px rgba(255, 122, 0, 0.3),   /* Stronger outer glow */
+    0 0 40px rgba(255, 122, 0, 0.2);   /* Strongest outer glow */
 }
 
 .starts-here {
@@ -113,18 +119,20 @@ body {
 .real, .art, .starts-here {
   margin: 0; /* Remove any default margin from the spans */
   padding: 0; /* Remove any padding */
-  line-height: 0; /* Keep the line height tight between the words */
+  line-height: 0.9; /* Reduce line-height to make text more compact */
+  letter-spacing: -0.5px; /* Reduce space between letters */
+}
 
+/* ===== Hero h2 Text */
 .hero h2 {
   font-size: 1.5rem;
   margin-top: 0.5rem;
-  color: white;
+  color: #ff7a00; /* Color changed to #ff7a00 */
 }
-
 
 /* ===== Footer ===== */
 footer {
   margin-top: 60px;
   font-size: 14px;
-  color: #ccc;
+  color: #ff7a00; /* Footer color changed to #ff7a00 */
 }
