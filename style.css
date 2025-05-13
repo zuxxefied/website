@@ -93,15 +93,19 @@ body {
   margin-bottom: 1rem;
 }
 
-.real-art {
-  font-family: 'Helvetica Neue', sans-serif; /* Regular sans-serif font */
+.real {
+  font-family: 'Glossary', sans-serif; /* Regular sans-serif font */
 }
 
-.starts-here {
+.art {
+  .starts-here {
   font-family: 'Glossary', serif; /* Italic sans-serif font */
   font-style: italic;
   font-weight: 700; /* Make it bold if needed */
-  color: rgba(255, 77, 227, 1); /* Optional: different color for emphasis */
+}
+
+.starts-here {
+  font-family: 'Glossarye', sans-serif; /* Regular sans-serif font */
 }
 
 .hero h2 {
