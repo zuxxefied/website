@@ -90,8 +90,14 @@ body {
 
 .hero h1 {
   font-size: 5rem; /* Make the text big */
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; /* Reduce space below the h1 */
+  line-height: 1; /* Ensure no extra space between lines of text */
 }
+
+.real, .art, .starts-here {
+  margin: 0; /* Remove any default margin from the spans */
+  padding: 0; /* Remove any padding */
+  line-height: 1; /* Keep the line height tight between the words */
 
 .real {
   font-family: 'Glossary', sans-serif; /* Regular sans-serif font */
