@@ -128,33 +128,51 @@ body::before {
 
 /* ===== Button Styles ===== */
 .hover-btn {
-  background-color: #ff7a00; /* Button background color */
-  color: black; /* Text color */
-  border-radius: 10em; /* Rounded button */
-  font-size: 17px; /* Font size */
-  font-weight: 600; /* Font weight */ 
-  padding: 1em 2em; /* Padding for button */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: all 0.3s ease-in-out; /* Smooth transition */
-  border: 1px solid black; /* Border styling */
-  box-shadow: 0 0 0 0 black; /* Initial box shadow */
-  margin-top: 20px; /* Space above the button */
-  
+  background-color: rgba(0, 0, 0, 0.15);
+  color: #ff7a00;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  margin-top: 20px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  text-shadow: 
+    0 0 10px rgba(255, 122, 0, 0.3),
+    0 0 20px rgba(255, 122, 0, 0.2);
+  --glow-x: 50%;
+  --glow-y: 50%;
+  /* Remove background gradient here */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
 }
 
 .hover-btn:hover {
-  transform: translateY(-4px) translateX(-2px); /* Slight lift on hover */
   box-shadow: 
-    2px 5px 0 0 black, /* Shadow effect */
+    0 3px 0 0 #ff7a00,
     0 0 10px rgba(255, 122, 0, 0.5),
     0 0 20px rgba(255, 122, 0, 0.4),
     0 0 30px rgba(255, 122, 0, 0.3),
-    0 0 40px rgba(255, 122, 0, 0.2); /* Glow effect */
+    0 0 40px rgba(255, 122, 0, 0.2);
+  transform: translateY(-2px) translateX(-1px);
+  background:
+    radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(255,122,0,0.4) 0%, rgba(255,122,0,0.0) 60%);
+}
+.hover-btn:focus {
+  outline: none;
+  box-shadow: 
+    0 0 10px rgba(255, 122, 0, 0.5),
+    0 0 20px rgba(255, 122, 0, 0.4),
+    inset -2px -2px rgba(255, 122, 0, 0.1);
 }
 
+
+
 .hover-btn:active {
-  transform: translateY(2px) translateX(1px); /* Pressed effect */
-  box-shadow: 0 0 0 0 black; /* Remove shadow on active */
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
 }
 
 .hero h1 {
