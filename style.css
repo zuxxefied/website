@@ -126,6 +126,37 @@ body::before {
   height: 100vh;
 }
 
+/* ===== Button Styles ===== */
+.hover-btn {
+  background-color: #ff7a00; /* Button background color */
+  color: black; /* Text color */
+  border-radius: 10em; /* Rounded button */
+  font-size: 17px; /* Font size */
+  font-weight: 600; /* Font weight */ 
+  padding: 1em 2em; /* Padding for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+  border: 1px solid black; /* Border styling */
+  box-shadow: 0 0 0 0 black; /* Initial box shadow */
+  margin-top: 20px; /* Space above the button */
+  
+}
+
+.hover-btn:hover {
+  transform: translateY(-4px) translateX(-2px); /* Slight lift on hover */
+  box-shadow: 
+    2px 5px 0 0 black, /* Shadow effect */
+    0 0 10px rgba(255, 122, 0, 0.5),
+    0 0 20px rgba(255, 122, 0, 0.4),
+    0 0 30px rgba(255, 122, 0, 0.3),
+    0 0 40px rgba(255, 122, 0, 0.2); /* Glow effect */
+}
+
+.hover-btn:active {
+  transform: translateY(2px) translateX(1px); /* Pressed effect */
+  box-shadow: 0 0 0 0 black; /* Remove shadow on active */
+}
+
 .hero h1 {
   font-size: 6rem;
   color: #ffffff;
