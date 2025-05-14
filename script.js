@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
 
 // ===== Dynamic "art" word rotation =====
 const artText = document.querySelector('.art');
-const words = ["Art", "Fun", "Inspiration", "Work"];
+const words = ["Art", "Fun", "Design", "Work"];
 let currentWordIndex = 0;
 
 setInterval(() => {
