@@ -18,7 +18,7 @@ body {
 .glass-navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start; /* optional: align content to the left */
   padding: 12px 24px;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.05);
@@ -28,18 +28,25 @@ body {
     0 0 10px rgb(255 167 77 / 30%),
     0 0 25px rgba(255, 122, 0, 0.2),
     0 0 45px rgba(255, 122, 0, 0.1);
-  margin: 30px auto 50px auto; /* This centers it horizontally */
-  width: 30%;
-  max-width: 550px;
+
+  margin: 30px auto 50px auto;
+  width: 550px; /* FIXED WIDTH */
+  max-width: 550px; /* Don't shrink */
+  min-width: 550px; /* Don't grow */
+  flex-wrap: nowrap; /* Prevent line break */
+  overflow: hidden; /* Optional: clip overflow */
 }
 
 .nav-links {
   display: flex;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 /* ===== Nav Buttons ===== */
 .nav-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
   background-color: rgba(255, 255, 255, 0.08);
   border: none;
   color: white;
@@ -84,6 +91,8 @@ body::before {
 
 /* ===== Logo Button ===== */
 .icon-btn {
+  margin-right: 12px;
+  flex-shrink: 0;
   background-color: rgba(255, 255, 255, 0.08);
   border: none;
   padding: 10px;
