@@ -157,7 +157,26 @@ footer {
 }
 
 /* ===== Mobile Responsive ===== */
-@media (max-width: 768px) {
+@media{
+  
+  .glass-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 10px rgb(255 167 77 / 30%),
+    0 0 25px rgba(255, 122, 0, 0.2),
+    0 0 45px rgba(255, 122, 0, 0.1);
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 400px;
+  }
+  
   .nav-links {
     display: none;
   }
@@ -175,7 +194,7 @@ footer {
   }
 
   .icon-btn img {
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
   }
 }
