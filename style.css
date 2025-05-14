@@ -10,6 +10,7 @@ body {
   padding: 0;
   background-image: url('website bg.png'); /* Replace with your image path */
   background-size: cover;
+  background-color: #0f0f0f;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
