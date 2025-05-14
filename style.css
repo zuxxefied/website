@@ -63,6 +63,10 @@ body {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   background-image: url('website bg.png');
+  background-size: cover; /* Make it fit */
+  background-repeat: no-repeat; /* Prevent looping */
+  background-position: center; /* Center it nicely */
+
   border-radius: 30px;
   max-width: 1500px;
   margin: 0 auto 80px auto;
