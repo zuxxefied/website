@@ -6,8 +6,6 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background-color: #0f0f0f;
   font-family: sans-serif;
 }
@@ -16,7 +14,7 @@ body {
 .glass-navbar {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   padding: 12px 24px;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.05);
@@ -26,15 +24,15 @@ body {
     0 0 10px rgb(255 167 77 / 30%),
     0 0 25px rgba(255, 122, 0, 0.2),
     0 0 45px rgba(255, 122, 0, 0.1);
-
   margin: 30px auto 50px auto;
   width: 90%;
   max-width: 550px;
-  min-width: auto;
   flex-wrap: nowrap;
   overflow: hidden;
+  position: relative;
 }
 
+/* ===== Nav Links ===== */
 .nav-links {
   display: flex;
   gap: 12px;
@@ -66,7 +64,6 @@ body {
 
 /* ===== Logo Button ===== */
 .icon-btn {
-  margin-right: 12px;
   flex-shrink: 0;
   background-color: rgba(255, 255, 255, 0.08);
   border: none;
@@ -85,40 +82,39 @@ body {
   filter: drop-shadow(0 0 5px rgba(255, 122, 0, 0.4));
 }
 
-/* ===== Mobile-Only Hamburger & Name ===== */
-.mobile-only {
-  display: none;
-}
-
-.hamburger {
-  flex-shrink: 0;
-  margin-right: 12px;
+/* ===== Hamburger & Mobile Branding ===== */
+.menu-icon {
   background: rgba(255, 255, 255, 0.08);
+  border: none;
   padding: 10px;
   border-radius: 50%;
-  border: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 32px;
-  width: 32px;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
 }
 
 .hamburger-line {
-  width: 18px;
+  width: 20px;
   height: 2px;
-  background-color: #fff;
+  background-color: white;
   border-radius: 2px;
+}
+
+.mobile-only {
+  display: none;
+  align-items: center;
 }
 
 .nav-name {
   color: white;
-  font-size: 18px;
-  font-weight: 600;
-  margin-left: 8px;
+  font-size: 20px;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  margin-left: 12px;
   white-space: nowrap;
-  display: inline-block;
 }
 
 /* ===== Content Box ===== */
@@ -209,12 +205,6 @@ body::before {
   letter-spacing: -0.5px;
 }
 
-.hero h2 {
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
-  color: #ff7a00;
-}
-
 /* ===== Footer ===== */
 footer {
   text-align: center;
@@ -226,28 +216,36 @@ footer {
 /* ===== Mobile Responsive ===== */
 @media (max-width: 768px) {
   .glass-navbar {
-    justify-content: start;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 12px 16px;
     width: 90%;
   }
 
-  .nav-links {
-    display: none;
-  }
-
-  .icon-btn img {
-    width: 35px;
-    height: 35px;
-  }
-
   .mobile-only {
     display: flex;
-    align-items: center;
-    margin-right: auto;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 10px;
   }
 
   .nav-name {
-    font-size: 16px;
+    font-size: 22px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .logo-only {
+    margin-left: auto;
   }
 
   .hero h1 {
