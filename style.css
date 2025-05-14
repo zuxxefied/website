@@ -13,7 +13,6 @@ body {
 }
 
 
-
 /* ===== Glass Navbar ===== */
 .glass-navbar {
   position: fixed; /* Stick to top */
@@ -71,7 +70,7 @@ body {
 }
 
 .content-box {
-  padding-top: 140px;
+  margin: 130px auto; /* Equal gap at the top and bottom */
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   background-image: url('website bg.png');
@@ -81,10 +80,10 @@ body {
 
   border-radius: 30px;
   max-width: 1500px;
-  margin: 0 auto 80px auto;
-  padding: 40px 20px;
+  padding: 40px auto 20px auto;
   box-shadow: 0 0 30px rgba(255, 122, 0, 0.1);
 }
+
 body::before {
   content: '';
   position: fixed;
@@ -191,6 +190,7 @@ body::before {
 footer {
   text-align: center;
   margin-top: 60px;
+  margin-bottom: 20px;
   font-size: 14px;
   color: #ff7a00;
 }
