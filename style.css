@@ -16,11 +16,11 @@ body {
 
 /* ===== Glass Navbar ===== */
 .glass-navbar {
-  position: fixed;         /* Make it stay on top */
-  top: 0;                  /* Align to the top */
-  left: 0;
-  right: 0;
-  z-index: 999;            /* Stay above other elements */
+  position: fixed; /* Stick to top */
+  top: 20px;        /* Some space from top */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 
   display: flex;
   align-items: center;
@@ -35,7 +35,6 @@ body {
     0 0 25px rgba(255, 122, 0, 0.2),
     0 0 45px rgba(255, 122, 0, 0.1);
 
-  margin: 30px auto;
   width: 90%;
   max-width: 550px;
   flex-wrap: nowrap;
@@ -72,7 +71,7 @@ body {
 }
 
 .content-box {
-  padding-top: 120px;
+  padding-top: 140px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   background-image: url('website bg.png');
@@ -118,6 +117,7 @@ body::before {
 
 /* ===== Hero Section ===== */
 .hero {
+  margin-top: 0px;
   margin-top: 60px;
   text-align: center;
   display: flex;
@@ -138,7 +138,7 @@ body::before {
   font-family: 'Glossary', serif;
   font-style: italic;
   font-size: 8rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #ff7a00;
   text-shadow: 
     0 0 10px rgba(255, 122, 0, 0.5),
