@@ -16,9 +16,15 @@ body {
 
 /* ===== Glass Navbar ===== */
 .glass-navbar {
+  position: fixed;         /* Make it stay on top */
+  top: 0;                  /* Align to the top */
+  left: 0;
+  right: 0;
+  z-index: 999;            /* Stay above other elements */
+
   display: flex;
   align-items: center;
-  justify-content: start; /* optional: align content to the left */
+  justify-content: start;
   padding: 12px 24px;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.05);
@@ -29,12 +35,11 @@ body {
     0 0 25px rgba(255, 122, 0, 0.2),
     0 0 45px rgba(255, 122, 0, 0.1);
 
-  margin: 30px auto 50px auto;
+  margin: 30px auto;
   width: 90%;
   max-width: 550px;
-  min-width: auto; 
-  flex-wrap: nowrap; /* Prevent line break */
-  overflow: hidden; /* Optional: clip overflow */
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .nav-links {
@@ -67,6 +72,7 @@ body {
 }
 
 .content-box {
+  padding-top: 120px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   background-image: url('website bg.png');
