@@ -6,8 +6,6 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background-color: #0f0f0f;
   font-family: sans-serif;
 }
@@ -26,27 +24,47 @@ body {
     0 0 10px rgb(255 167 77 / 30%),
     0 0 25px rgba(255, 122, 0, 0.2),
     0 0 45px rgba(255, 122, 0, 0.1);
-
-  margin: 30px auto 0;
+  margin: 30px auto 50px auto;
   width: 90%;
-  max-width: 600px;
+  max-width: 550px;
+  flex-wrap: nowrap;
+  overflow: hidden;
   position: relative;
 }
 
-/* ===== Centered Brand Name ===== */
-.nav-name {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Georgia', serif;
-  font-size: 24px;
-  font-weight: bold;
+/* ===== Nav Links ===== */
+.nav-links {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ===== Nav Buttons ===== */
+.nav-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
   color: white;
-  pointer-events: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  font-family: 'Glossary', serif;
+  font-style: italic;
+  background-color: rgba(255, 122, 0, 0.15);
+  box-shadow:
+    0 0 6px rgba(255, 122, 0, 0.5),
+    0 0 12px rgba(255, 122, 0, 0.3);
 }
 
 /* ===== Logo Button ===== */
 .icon-btn {
+  flex-shrink: 0;
   background-color: rgba(255, 255, 255, 0.08);
   border: none;
   padding: 10px;
@@ -64,77 +82,39 @@ body {
   filter: drop-shadow(0 0 5px rgba(255, 122, 0, 0.4));
 }
 
-/* ===== Hamburger Icon ===== */
+/* ===== Hamburger & Mobile Branding ===== */
 .menu-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 24px;
-  width: 32px;
   background: rgba(255, 255, 255, 0.08);
   border: none;
+  padding: 10px;
   border-radius: 50%;
-  padding: 8px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
 }
 
 .hamburger-line {
-  width: 18px;
+  width: 20px;
   height: 2px;
   background-color: white;
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
-/* ===== Slide-down Mobile Menu ===== */
-.mobile-menu {
+.mobile-only {
   display: none;
-  flex-direction: column;
-  gap: 12px;
-  padding: 20px;
-  background-color: rgba(20, 20, 20, 0.9);
-  border-radius: 20px;
-  margin: 10px auto 30px;
-  width: 90%;
-  max-width: 400px;
-  animation: fadeIn 0.3s ease-in-out;
+  align-items: center;
 }
 
-.mobile-menu.show {
-  display: flex;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== Nav Buttons (used in dropdown) ===== */
-.nav-btn {
-  white-space: nowrap;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: none;
+.nav-name {
   color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
-}
-
-.nav-btn:hover {
+  font-size: 20px;
   font-family: 'Georgia', serif;
-  font-style: italic;
-  background-color: rgba(255, 122, 0, 0.15);
-  box-shadow:
-    0 0 6px rgba(255, 122, 0, 0.5),
-    0 0 12px rgba(255, 122, 0, 0.3);
+  font-weight: 700;
+  margin-left: 12px;
+  white-space: nowrap;
 }
 
 /* ===== Content Box ===== */
@@ -147,9 +127,17 @@ body {
   background-position: center;
   border-radius: 30px;
   max-width: 1500px;
-  margin: 30px auto 80px auto;
+  margin: 0 auto 80px auto;
   padding: 40px 20px;
   box-shadow: 0 0 30px rgba(255, 122, 0, 0.1);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 
 /* ===== Hero Section ===== */
@@ -171,7 +159,7 @@ body {
 }
 
 .art {
-  font-family: 'Georgia', serif;
+  font-family: 'Glossary', serif;
   font-style: italic;
   font-size: 10rem;
   font-weight: 900;
@@ -193,11 +181,12 @@ body {
 }
 
 .starts-here {
-  font-family: sans-serif;
+  font-family: 'Glossarye', sans-serif;
   color: #ffffff;
 }
 
 .lol {
+  font-family: 'Glossarye', ui-rounded;
   font-style: italic;
   position: relative;
   left: -25px;
@@ -216,12 +205,6 @@ body {
   letter-spacing: -0.5px;
 }
 
-.hero h2 {
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
-  color: #ff7a00;
-}
-
 /* ===== Footer ===== */
 footer {
   text-align: center;
@@ -230,15 +213,39 @@ footer {
   color: #ff7a00;
 }
 
-/* ===== Responsive ===== */
+/* ===== Mobile Responsive ===== */
 @media (max-width: 768px) {
   .glass-navbar {
-    width: 90%;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 12px 16px;
+    width: 90%;
+  }
+
+  .mobile-only {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 10px;
   }
 
   .nav-name {
-    font-size: 18px;
+    font-size: 22px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .logo-only {
+    margin-left: auto;
   }
 
   .hero h1 {
