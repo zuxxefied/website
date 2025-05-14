@@ -6,14 +6,16 @@
 }
 
 body {
-  background: #0f0f0f;
-  color: white;
-  font-family: 'Glossarye', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
+  margin: 0;
+  padding: 0;
+  background-image: url('website bg.png'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: sans-serif;
 }
+
 
 /* ===== Glass Navbar ===== */
 .glass-navbar {
