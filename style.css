@@ -8,7 +8,6 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('website bg.png');
   background-color: #0f0f0f;
   font-family: sans-serif;
 }
@@ -63,7 +62,7 @@ body {
 .content-box {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  background-image: url('website bg.png');
   border-radius: 30px;
   max-width: 1500px;
   margin: 0 auto 80px auto;
