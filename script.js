@@ -13,3 +13,11 @@ setInterval(() => {
   currentWordIndex = (currentWordIndex + 1) % words.length;
 }, 250);
 
+// ===== Mobile Menu Toggle (Optional Expansion) =====
+const menuIcon = document.querySelector('.menu-icon');
+
+menuIcon.addEventListener('click', () => {
+  alert("Menu button clicked! You can build a sliding menu or modal here.");
+  // Or dynamically toggle a menu, e.g.:
+  // document.querySelector('.mobile-menu').classList.toggle('open');
+});
