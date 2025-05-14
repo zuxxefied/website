@@ -18,6 +18,5 @@ const menuIcon = document.querySelector('.menu-icon');
 const mobileMenu = document.querySelector('.mobile-menu');
 
 menuIcon.addEventListener('click', () => {
-  mobileMenu.style.display = 
-    mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+  mobileMenu.classList.toggle('show');
 });
