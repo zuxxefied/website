@@ -13,10 +13,3 @@ setInterval(() => {
   currentWordIndex = (currentWordIndex + 1) % words.length;
 }, 250);
 
-// ===== Mobile Menu Toggle =====
-const menuIcon = document.querySelector('.menu-icon');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-menuIcon.addEventListener('click', () => {
-  mobileMenu.classList.toggle('show');
-});
