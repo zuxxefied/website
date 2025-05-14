@@ -60,6 +60,25 @@ body {
     0 0 12px rgba(255, 122, 0, 0.3);
 }
 
+.content-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  max-width: 1000px;
+  margin: 0 auto 80px auto;
+  padding: 40px 20px;
+  box-shadow: 0 0 30px rgba(255, 122, 0, 0.1);
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* softens background */
+  z-index: -1;
+}
+
+
 /* ===== Logo Button ===== */
 .icon-btn {
   background-color: rgba(255, 255, 255, 0.08);
