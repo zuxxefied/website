@@ -8,6 +8,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url('website bg.png');
   background-color: #0f0f0f;
   font-family: sans-serif;
 }
