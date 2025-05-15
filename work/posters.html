@@ -2,17 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="theme-color" content="#0f0f0f" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Posters | Zuxxefied</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Hide lightbox by default to prevent flicker */
+    #lightbox {
+      display: none !important;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+    }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: 0 0 32px #ff7a00;
+    }
+    #lightbox span.close-btn {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      font-size: 3rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 10001;
+    }
+  </style>
 </head>
 <body>
+  
   <div class="content-box work-bg">
     <!-- Navbar -->
     <div class="glass-navbar">
-      <button class="icon-btn logo-only" aria-label="User">
-        <img src="../Logopng.png" alt="Logo" />
-      </button>
+  <a href="../index.html" class="icon-btn logo-only">
+  <img src="../Logopng.png" alt="Logo" />
+</a>  
       <div class="nav-links">
         <a href="../index.html" class="nav-btn">Home</a>
         <a href="../work.html" class="nav-btn">Work</a>
@@ -22,49 +54,35 @@
     </div>
 
     <h1>Posters</h1>
-    <div class="work-gallery">
-  <div class="work-item">
-    <img src="posters/02bec7171769443.64749e15ed07c.png" alt="Poster 1" />
-    <p>Poster 1</p>
-  </div>
-  <div class="work-item">
-    <img src="posters/air 1.png" alt="Poster 2" />
-    <p>Poster 2</p>
-  </div>
-  <div class="work-item">
-    <img src="posters/Hidden Beauty.png" alt="Poster 3" />
-    <p>Poster 3</p>
-  </div>
-  <div class="work-item">
-    <img src="posters/mcl60.png" alt="Poster 4" />
-    <p>Poster 4</p>
-  </div>
-  <div class="work-item">
-    <img src="posters/mig29 post 4.png" alt="Poster 4" />
-    <p>Poster 5</p>
-  </div>
-  <div class="work-item">
-    <img src="posters/Nike 2 (New).png" alt="Poster 4" />
-    <p>Poster 6</p>
-  </div>
-  <div class="work-item">
-    <img src="posters/Porsche 2.png" alt="Poster 4" />
-    <p>Poster 6</p>
-  </div>
-  <div class="work-item">
-    <img src="posters/Space 3.png" alt="Poster 4" />
-    <p>Poster 6</p>
-  </div>
-      <!-- Add more posters as needed -->
+    <div id="poster-container" class="work-gallery"></div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox">
+      <span class="close-btn" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" src="" alt="Poster Preview" />
     </div>
-    <footer>
-      <p>© 2025 Zuxxefied</p>
-    </footer>
+
   </div>
-  <!-- Lightbox Modal -->
-  <div id="lightbox" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); align-items:center; justify-content:center;">
-    <img id="lightbox-img" src="" alt="Poster Preview" style="max-width:90vw; max-height:90vh; border-radius:16px; box-shadow:0 0 32px #ff7a00;">
+    <script src="../script.js"></script>
   </div>
-  <script src="../script.js"></script>
+
+  <script>
+  fetch("posters.json")
+    .then(response => response.json())
+    .then(images => {
+      const container = document.getElementById("poster-container");
+      images.forEach(image => {
+        const div = document.createElement("div");
+        div.className = "work-item";
+        div.innerHTML = `
+          <img src="posters/${image}" alt="${image}" />
+          <div class="poster-overlay"><p>${image.replace(/\.[^/.]+$/, "")}</p></div>
+        `;
+        container.appendChild(div);
+      });
+    });
+
+    
+</script>
 </body>
 </html>
