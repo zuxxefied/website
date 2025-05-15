@@ -8,19 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="poster-overlay"><p>${image.replace(/\.[^/.]+$/, "")}</p></div>
   `;
   container.appendChild(div);
-  // ===== Preloader =====
-  const loader = document.getElementById("loader");
-  const mainContent = document.getElementById("main-content");
-
-  if (mainContent) {
-    mainContent.classList.add("blurred"); // Add blur initially
-  }
-
-    if (loader) loader.style.display = "none";
-    if (mainContent) {
-    mainContent.style.display = "block";
-    mainContent.classList.remove("blurred");
-  }
 
   // ===== Scramble Title Animation =====
   const el = document.getElementById("scramble-title");
