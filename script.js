@@ -16,15 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
     mainContent.classList.add("blurred"); // Add blur initially
   }
 
-  const MIN_LOADER_TIME = 0;
-
-  setTimeout(() => {
     if (loader) loader.style.display = "none";
     if (mainContent) {
-      mainContent.style.display = "block";
-      mainContent.classList.remove("blurred"); // Remove blur after loader
-    }
-  }, MIN_LOADER_TIME);
+    mainContent.style.display = "block";
+    mainContent.classList.remove("blurred");
+  }
 
   // ===== Scramble Title Animation =====
   const el = document.getElementById("scramble-title");
