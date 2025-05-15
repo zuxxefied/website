@@ -94,3 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
     el.textContent = original;
   });
 });
+
+images.forEach(image => {
+  const div = document.createElement("div");
+  div.className = "work-item";
+  div.innerHTML = `
+    <img src="posters/${image}" alt="${image}" loading="lazy" />
+    <div class="poster-overlay"><p>${image.replace(/\.[^/.]+$/, "")}</p></div>
+  `;
+  container.appendChild(div);
+});
