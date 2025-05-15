@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Posters | Zuxxefied</title>
   <link rel="stylesheet" href="../style.css" />
+  <!-- Preload logo -->
+  <link rel="preload" href="../Logopng.png" as="image" />
   <style>
     /* Hide lightbox by default to prevent flicker */
     #lightbox {
@@ -38,13 +40,13 @@
   </style>
 </head>
 <body>
-  
+
   <div class="content-box work-bg">
     <!-- Navbar -->
     <div class="glass-navbar">
-  <a href="../index.html" class="icon-btn logo-only">
-  <img src="../Logopng.png" alt="Logo" />
-</a>  
+      <a href="../index.html" class="icon-btn logo-only">
+        <img src="../Logopng.png" alt="Logo" />
+      </a>  
       <div class="nav-links">
         <a href="../index.html" class="nav-btn">Home</a>
         <a href="../work.html" class="nav-btn">Work</a>
@@ -63,26 +65,10 @@
     </div>
 
   </div>
-    <script src="../script.js"></script>
-  </div>
 
-  <script>
-  fetch("posters.json")
-    .then(response => response.json())
-    .then(images => {
-      const container = document.getElementById("poster-container");
-      images.forEach(image => {
-        const div = document.createElement("div");
-        div.className = "work-item";
-        div.innerHTML = `
-          <img src="posters/${image}" alt="${image}" />
-          <div class="poster-overlay"><p>${image.replace(/\.[^/.]+$/, "")}</p></div>
-        `;
-        container.appendChild(div);
-      });
-    });
+  <!-- Load shared and posters page scripts deferred -->
+  <script src="../common.js" defer></script>
+  <script src="posters.js" defer></script>
 
-    
-</script>
 </body>
 </html>

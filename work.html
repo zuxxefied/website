@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8" />
   <meta name="theme-color" content="#0f0f0f" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Work | Zuxxefied</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Preload logo for faster render -->
+  <link rel="preload" href="Logopng.png" as="image" />
 </head>
 <body>
 
-  <!-- Loader -->
-  
+  <div class="content-box work-bg no-bg">
+    <h1 class="center-text" id="scramble-title">My Work</h1>
 
-<div class="content-box work-bg no-bg">
-  <h1 class="center-text" id="scramble-title">My Work</h1>
-  <!-- Navbar Glass UI -->
-  <div class="glass-navbar">
-  <a href="index.html" class="icon-btn logo-only" aria-label="User">
-    <img src="Logopng.png" alt="Logo" />
-  </a>
-    <div class="nav-links">
-      <a href="index.html" class="nav-btn">Home</a>
-      <a href="work.html" class="nav-btn">Work</a>
-      <button class="nav-btn">Commission</button>
-      <button class="nav-btn">Contact</button>
+    <!-- Navbar Glass UI -->
+    <div class="glass-navbar">
+      <a href="index.html" class="icon-btn logo-only" aria-label="User">
+        <img src="Logopng.png" alt="Logo" />
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="work.html" class="nav-btn">Work</a>
+        <button class="nav-btn">Commission</button>
+        <button class="nav-btn">Contact</button>
+      </div>
     </div>
-  </div>
 
-  <!-- Work Showcase Section -->
-  
+    <!-- Work Showcase Section -->
     <div class="work-gallery">
-  <!-- Thumbnails button -->
-  <a href="work/thumbnail.html" class="work-item-link">
-    <div class="work-item">
-      <img src="thumbnail1.jpg" alt="Thumbnail 1" />
+      <!-- Thumbnails button -->
+      <a href="work/thumbnail.html" class="work-item-link">
+        <div class="work-item">
+          <img src="thumbnail1.jpg" alt="Thumbnail 1" />
+        </div>
+      </a>
+      <!-- Posters button -->
+      <a href="work/posters.html" class="work-item-link">
+        <div class="work-item">
+          <img src="work/posters/posters.jpg" alt="Poster 1" />
+        </div>
+      </a>
+      <!-- Add more items as needed -->
     </div>
-  </a>
-  <!-- Posters button -->
-  <a href="work/posters.html" class="work-item-link">
-  <div class="work-item">
-    <img src="work/posters/posters.jpg" alt="Poster 1" />
-  </div>
-</a>
-  <!-- Add more items as needed -->
-</div>
+
     <footer>
       <p>© 2025 Zuxxefied</p>
     </footer>
-  
   </div>
 
-  <script src="script.js"></script>
+  <!-- Load shared and work page scripts deferred -->
+  <script src="common.js" defer></script>
+  <script src="work.js" defer></script>
+
 </body>
 </html>
