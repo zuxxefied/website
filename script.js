@@ -1,22 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  fetch("posters.json")
-    .then(response => response.json())
-    .then(images => {
-      const container = document.getElementById("poster-container");
-      if (!container) return;
-
-      images.forEach(image => {
-        const div = document.createElement("div");
-        div.className = "work-item";
-        div.innerHTML = `
-          <img src="posters/${image}" alt="${image.replace(/\.[^/.]+$/, "")}" loading="lazy" />
-          <div class="poster-overlay"><p>${image.replace(/\.[^/.]+$/, "")}</p></div>
-        `;
-        container.appendChild(div);
-      });
-    })
-    .catch(error => console.error("Error loading posters:", error));
+  images.forEach(image => {
+  const div = document.createElement("div");
+  div.className = "work-item";
+  div.innerHTML = `
+    <img src="posters/${image}" alt="${image}" loading="lazy" />
+    <div class="poster-overlay"><p>${image.replace(/\.[^/.]+$/, "")}</p></div>
+  `;
+  container.appendChild(div);
   // ===== Preloader =====
   const loader = document.getElementById("loader");
   const mainContent = document.getElementById("main-content");
@@ -214,14 +205,4 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(interval);
     el.textContent = original;
   });
-});
-
-images.forEach(image => {
-  const div = document.createElement("div");
-  div.className = "work-item";
-  div.innerHTML = `
-    <img src="posters/${image}" alt="${image}" loading="lazy" />
-    <div class="poster-overlay"><p>${image.replace(/\.[^/.]+$/, "")}</p></div>
-  `;
-  container.appendChild(div);
 });
