@@ -94,3 +94,4 @@ document.addEventListener("DOMContentLoaded", () => {
     el.textContent = original;
   });
 });
+

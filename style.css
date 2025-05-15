@@ -9,7 +9,10 @@ body {
   margin: 0;
   padding: 0;
   background-color: #0f0f0f;
+
   font-family: 'Glossary', sans-serif;
+
+  font-family: sans-serif;
 }
 
 
@@ -60,20 +63,30 @@ body {
   transition: all 0.3s ease;
 }
 
+
 a.nav-btn {
   text-decoration: none;
 }
 
 .nav-btn:hover {
   font-family: 'Glossary', serif;
+
+  .nav-btn:hover {
+  font-family: 'Glossary', serif;
+  font-style: italic;
+
   background-color: rgba(255, 122, 0, 0.15);
   box-shadow:
     0 0 6px rgba(255, 122, 0, 0.5),
     0 0 12px rgba(255, 122, 0, 0.3);
 }
+
 .work-bg {
   background-image: none !important;
 }
+
+
+
 .content-box {
   margin: 130px auto; /* Equal gap at the top and bottom */
   background: rgba(255, 255, 255, 0.03);
@@ -249,6 +262,7 @@ footer {
   color: #ff7a00;
 }
 
+
 /* ===== work ===== */
 
 .center-text {
@@ -335,3 +349,4 @@ footer {
   }
 }
 
+}
