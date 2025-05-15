@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mainContent.classList.add("blurred"); // Add blur initially
   }
 
-  const MIN_LOADER_TIME = 2500; // 2.5 seconds
+  const MIN_LOADER_TIME = 0;
 
   setTimeout(() => {
     if (loader) loader.style.display = "none";
