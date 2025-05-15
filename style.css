@@ -9,10 +9,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #0f0f0f;
-
   font-family: 'Glossary', sans-serif;
-
-  font-family: sans-serif;
 }
 
 
@@ -71,10 +68,6 @@ a.nav-btn {
 .nav-btn:hover {
   font-family: 'Glossary', serif;
 
-  .nav-btn:hover {
-  font-family: 'Glossary', serif;
-  font-style: italic;
-
   background-color: rgba(255, 122, 0, 0.15);
   box-shadow:
     0 0 6px rgba(255, 122, 0, 0.5),
@@ -84,8 +77,6 @@ a.nav-btn {
 .work-bg {
   background-image: none !important;
 }
-
-
 
 .content-box {
   margin: 130px auto; /* Equal gap at the top and bottom */
@@ -262,7 +253,6 @@ footer {
   color: #ff7a00;
 }
 
-
 /* ===== work ===== */
 
 .center-text {
@@ -349,4 +339,3 @@ footer {
   }
 }
 
-}
