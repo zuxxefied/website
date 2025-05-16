@@ -43,18 +43,30 @@
   <div class="background-blur"></div>
 
   <div class="content-box thumbnail-bg">
-    <!-- Navbar -->
     <div class="glass-navbar">
-      <a href="../index.html" class="icon-btn logo-only">
-        <img src="../Logopng.png" alt="Logo" />
-      </a>  
-      <div class="nav-links">
-        <a href="../index.html" class="nav-btn">Home</a>
-        <a href="../work.html" class="nav-btn">Work</a>
-        <button class="nav-btn">Commission</button>
-        <button class="nav-btn">Contact</button>
-      </div>
+  <a href="../index.html" class="icon-btn logo-only" aria-label="User">
+    <img src="../logo.gif" alt="Logo" />
+  </a>
+
+    <!-- Desktop Nav Links (now inside navbar) -->
+    <div class="nav-links">
+      <button class="nav-btn">Home</button>
+      <a href="../work.html" class="nav-btn">Work</a>
+      <button class="nav-btn">Commission</button>
+      <button class="nav-btn">Contact</button>
+    </div>  
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="nav-btn">Home</button>
+      <a href="../work.html" class="nav-btn">Work</a>
+      <button class="nav-btn">Commission</button>
+      <button class="nav-btn">Contact</button>
     </div>
+  </div>
 
     <h1 class="center-text">Thumbnails</h1>
     <p class="thumb-exp">

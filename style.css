@@ -36,6 +36,36 @@ body {
   z-index: 1;
 }
 
+.mobile-brand {
+  display: none;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+
+/* Show on mobile */
+@media (max-width: 768px) {
+  .mobile-brand {
+    font-family: 'Glossary', sans-serif;
+    font-size: 2rem;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.3),
+    0 0 40px rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
 /* ===== Glass Navbar ===== */
 .glass-navbar {
   position: fixed; /* Stick to top */
@@ -60,7 +90,7 @@ body {
   width: 90%;
   max-width: 550px;
   flex-wrap: nowrap;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .nav-links {
@@ -445,9 +475,24 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .work-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 16px;
+  .work-gallery,
+  .poster-gallery,
+  .thumbnails-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .work-item img {
+    max-height: none; /* Allow full height if needed */
+    height: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .work-gallery,
+  .poster-gallery,
+  .thumbnails-gallery {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -577,10 +622,10 @@ footer {
 /* ===== Mobile Navbar Fix ===== */
 @media (max-width: 768px) {
   .glass-navbar {
-    justify-content: center;
-    padding: 12px 16px;
-    width: 90%;
-  }
+  justify-content: center;
+  padding: 12px 16px;
+  flex-wrap: wrap;
+}
 
   .nav-links {
     display: none;
@@ -597,5 +642,78 @@ footer {
 
   .art {
     font-size: 5rem;
+  }
+}
+
+/* Default mobile menu hidden */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  width: 44px;  /* Make the button bigger for easy tapping */
+  height: 44px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1100; /* Ensure it's above other elements */
+  position: relative; /* Helps with stacking */
+  padding: 0;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 60px; /* adjust according to navbar height */
+  right: 10px;
+  background: rgba(40, 40, 40, 0.95);
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu .nav-btn,
+.mobile-menu a {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .glass-navbar {
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide desktop nav */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-menu.active {
+    display: flex;
   }
 }
