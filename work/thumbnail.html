@@ -2,20 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="theme-color" content="#0f0f0f" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thumbnails | Zuxxefied</title>
+  <title>thumbnails | Zuxxefied</title>
   <link rel="stylesheet" href="../style.css" />
   <!-- Preload logo -->
-  <link rel="preload" href="../Logopng.png" as="image" />
+  <link rel="preload" href="../logo.gif" as="image" />
+  <style>
+    /* Hide lightbox by default to prevent flicker */
+    #lightbox {
+      display: none !important;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+    }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: 0 0 32px #ff7a00;
+    }
+    #lightbox span.close-btn {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      font-size: 3rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 10001;
+    }
+  </style>
 </head>
 <body>
 
   <div class="content-box work-bg">
     <!-- Navbar -->
     <div class="glass-navbar">
-      <a href="../index.html" class="icon-btn logo-only" aria-label="User">
+      <a href="../index.html" class="icon-btn logo-only">
         <img src="../Logopng.png" alt="Logo" />
-      </a>
+      </a>  
       <div class="nav-links">
         <a href="../index.html" class="nav-btn">Home</a>
         <a href="../work.html" class="nav-btn">Work</a>
@@ -24,29 +55,20 @@
       </div>
     </div>
 
-    <h1>Thumbnails</h1>
-    <div class="work-gallery">
-      <!-- Example thumbnails, replace with your images -->
-      <div class="work-item">
-        <img src="thumbnail1.jpg" alt="Thumbnail 1" />
-        <p>Thumbnail 1</p>
-      </div>
-      <div class="work-item">
-        <img src="thumbnail2.jpg" alt="Thumbnail 2" />
-        <p>Thumbnail 2</p>
-      </div>
-      <!-- Add more thumbnails as needed -->
+    <h1>thumbnails</h1>
+    <div id="thumbnails-container" class="thumbnails-gallery"></div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox">
+      <span class="close-btn" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" src="" alt="thumbnails Preview" />
     </div>
-    <footer>
-      <p>© 2025 Zuxxefied</p>
-    </footer>
+
   </div>
 
-  <!-- If you add JS later, add scripts here with defer -->
-  <!-- Example:
+  <!-- Load shared and thumbnails page scripts deferred -->
   <script src="../common.js" defer></script>
-  <script src="../thumbnail.js" defer></script>
-  -->
+  <script src="thumbnails.js" defer></script>
 
 </body>
 </html>
