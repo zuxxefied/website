@@ -1,13 +1,11 @@
-// Fetch thumbnails.json from current directory
-fetch("thumbnails.json")
+// Example for thumbnails.js or posters.js
+fetch("thumbnails.json") // or "posters.json"
   .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     return response.json();
   })
   .then(images => {
-    const container = document.getElementById("thumbnails-container");
+    const container = document.getElementById("thumbnails-container"); // or "poster-container"
     if (!container) return;
 
     images.forEach(image => {
@@ -20,31 +18,9 @@ fetch("thumbnails.json")
       container.appendChild(div);
     });
 
-    setupLightbox();
+    // Call the global setupLightbox after images are rendered
+    if (typeof setupLightbox === "function") setupLightbox();
   })
   .catch(e => {
     console.error("Error loading thumbnails.json:", e);
   });
-
-// Lightbox setup function
-function setupLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-
-  document.querySelectorAll('.work-item img').forEach(img => {
-    img.addEventListener('click', () => {
-      if (lightbox && lightboxImg) {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.style.display = 'flex';
-      }
-    });
-  });
-
-  if (lightbox && lightboxImg) {
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-      lightboxImg.src = '';
-    });
-  }
-}

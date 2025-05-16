@@ -153,6 +153,31 @@ a.nav-btn {
   z-index: -1;
 }
 
+.adver-bg {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.adver-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('work/Advertisments/adver.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -2;
+}
+
+.adver-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* black with 50% opacity */
+  z-index: -1;
+}
+
 .thumbnail-bg {
   position: relative;
   overflow: hidden;
@@ -417,6 +442,18 @@ footer {
   padding: 1rem 1rem;  /* optional: adds breathing room on mobile */
 }
 
+.adver-exp {
+  text-shadow: 2px 2px 4px #0f0f0f;
+  font-size: 0.8rem;
+  font-weight: 100;
+  line-height: 1.6;
+  margin: 0 auto 6rem auto; /* top, horizontal center, bottom */
+  color: #fff;
+  text-align: center;
+  max-width: 800px; /* controls the line length for wrapping */
+  padding: 1rem 1rem;  /* optional: adds breathing room on mobile */
+}
+
 .thumb-exp {
   text-shadow: 2px 2px 4px #0f0f0f;
   font-size: 0.8rem;
@@ -451,13 +488,19 @@ footer {
 .work-gallery {
   
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   justify-items: center;
   margin-top: 40px;
 }
-
 .poster-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  justify-items: center;
+  margin-top: 40px;
+}
+.adver-gallery {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 32px;
@@ -477,7 +520,8 @@ footer {
 @media (max-width: 768px) {
   .work-gallery,
   .poster-gallery,
-  .thumbnails-gallery {
+  .thumbnails-gallery,
+  .adver-gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
@@ -491,7 +535,8 @@ footer {
 @media (max-width: 500px) {
   .work-gallery,
   .poster-gallery,
-  .thumbnails-gallery {
+  .thumbnails-gallery,
+  .adver-gallery {
     grid-template-columns: 1fr;
   }
 }
@@ -499,10 +544,15 @@ footer {
 .work-item {
   position: relative;
   overflow: hidden;
-  transition: z-index 0.3s;
+  border-radius: 12px;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Ensure it's a square or use 16/9 for landscape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .poster-overlay {
+  pointer-events: none;
   position: absolute;
   inset: 0;
   display: flex;
@@ -518,9 +568,28 @@ footer {
   backdrop-filter: blur(4px);
   z-index: 2;
   border-radius: 12px;
+}
+
+.adver-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  pointer-events: none;
 }
 
 .thumbnails-overlay {
+  pointer-events: none;
   position: absolute;
   inset: 0;
   display: flex;
@@ -536,6 +605,10 @@ footer {
   backdrop-filter: blur(4px);
   z-index: 2;
   border-radius: 12px;
+}
+
+.work-item:hover .adver-overlay {
+  opacity: 1;
 }
 
 .work-item,
@@ -549,13 +622,17 @@ footer {
   opacity: 1;
 }
 
+.work-item:hover .adver-overlay {
+  opacity: 1;
+}
+
+
 .work-item:hover .thumbnails-overlay {
   opacity: 1;
 }
 
 .work-item:hover img {
-  transform: scale(1.15);
-  box-shadow: 0 0 32px 8px #ff7a00, 0 2px 24px rgba(0,0,0,0.25);
+  transform: scale(1.05); /* Slight zoom is okay */
 }
 
 #lightbox {
@@ -571,28 +648,34 @@ footer {
   justify-content: center;
 }
 
+#lightbox.show {
+  display: flex;
+}
+
 #lightbox-img {
-  filter: none !important;
-  transform: none !important;
+  max-width: 90%;
+  max-height: 90%;
   box-shadow: 0 0 32px #ff7a00;
   border-radius: 16px;
-  background: none;
 }
-.work-item:hover {
+.work-item:hover {  
   z-index: 10;
 }
 
 .work-item img {
-  transition: box-shadow 0.3s, transform 0.3s, filter 0.3s;
   cursor: pointer;
-  max-width: 100%;
-  max-height: 320px;
-  object-fit: cover;
-  border-radius: 12px;
 }
 
-.work-item img:hover {
-  box-shadow: 0 0 24px 4px #ff7a00, 0 2px 16px rgba(0,0,0,0.2);
+.work-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.work-item:hover img {
+  transform: scale(1.1);
 }
 
 /* Additional animations */
@@ -602,9 +685,18 @@ footer {
   50% { opacity: 0.5; }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* Any other styles you want to keep unchanged */
 
-
+#adver-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
 
 .work-item p {
   color: #fff;

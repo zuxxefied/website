@@ -20,7 +20,7 @@ document.addEventListener('keydown', (e) => {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     if (lightbox && lightboxImg) {
-      lightbox.style.display = 'none';
+      lightbox.classList.remove('show');
       lightboxImg.src = '';
     }
   }
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (toggle && mobileMenu) {
     const toggleMenu = () => {
       mobileMenu.classList.toggle('active');
-      toggle.classList.toggle('open'); // For animating hamburger icon if desired
+      toggle.classList.toggle('open');
     };
 
     // Click toggle
@@ -56,3 +56,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// ===== Lightbox Setup =====
+function setupLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = lightbox ? lightbox.querySelector('.close-btn') : null;
+
+  if (!lightbox || !lightboxImg) return;
+
+  // Remove previous listeners to avoid duplicates
+  document.querySelectorAll('.work-item img').forEach(img => {
+    img.onclick = null;
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('show');
+    });
+  });
+
+  // Close on background or close button click
+  lightbox.onclick = (e) => {
+    if (e.target === lightbox || (closeBtn && e.target === closeBtn)) {
+      lightbox.classList.remove('show');
+      lightboxImg.src = '';
+    }
+  };
+}
