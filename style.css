@@ -47,7 +47,7 @@ body {
 @media (max-width: 768px) {
   .mobile-brand {
     font-family: 'Glossary', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -466,13 +466,20 @@ footer {
   padding: 1rem 1rem;  /* optional: adds breathing room on mobile */
 }
 .center-text {
-  -webkit-text-stroke: #ffffff 0.3px;
+  -webkit-text-stroke: #ffffff 0.2px;
   font-family: 'Glossarye', sans-serif;
-  font-size: 4rem;
+  font-style: italic;
+  font-size: 6.5rem;
   text-align: center;
   margin-top: 24px;
   color: #ff7a00;
   animation: glow 2s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .center-text {
+    font-size: 2.5rem;
+  }
 }
 
 #scramble-title {
@@ -500,12 +507,15 @@ footer {
   justify-items: center;
   margin-top: 40px;
 }
-.adver-gallery {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 32px;
-  justify-items: center;
-  margin-top: 40px;
+.adver-gallery .work-item {
+  aspect-ratio: 1 / 1;
+  max-width: 240px;
+  width: 100%;
+}
+.adver-gallery .work-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .thumbnails-gallery {
@@ -541,12 +551,13 @@ footer {
   }
 }
 
+
 .work-item {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
   width: 100%;
-  aspect-ratio: 1 / 1; /* Ensure it's a square or use 16/9 for landscape */
+  /* aspect-ratio: unset; ← leave this out entirely */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -662,16 +673,17 @@ footer {
   z-index: 10;
 }
 
-.work-item img {
-  cursor: pointer;
-}
 
-.work-item img {
+
+.work-item img,
+.blur-target,
+.overlay-img {
+  cursor: pointer;
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-width: 500px; /* Adjust to your liking */
+  max-height: 500px;
   object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
 }
 
 .work-item:hover img {
