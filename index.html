@@ -4,22 +4,283 @@
   <meta charset="UTF-8" />
   <meta name="theme-color" content="#0f0f0f" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zuxxefied</title>
+  <title>Zuxxefied | Creative Digital Art & Design</title>
   <link rel="stylesheet" href="style.css" />
   <!-- Preload your logo for faster display -->
   <link rel="preload" href="Logopng.png" as="image" />
+  <link rel="preload" href="logo.gif" as="image" />
+  <style>
+    /* Additional styles for the enhanced home page */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      min-height: 80vh;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.9;
+      margin-bottom: 2rem;
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: fadeUp 1s forwards 0.3s;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      margin-bottom: 3rem;
+      max-width: 600px;
+      color: rgba(255, 255, 255, 0.8);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 1s forwards 0.6s;
+    }
+    
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      opacity: 0;
+      animation: fadeIn 1s forwards 0.9s;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .hover-btn {
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0.15);
+      color: #ff7a00;
+      border-radius: 10em;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 1em 2em;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      margin-top: 20px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      text-shadow: 
+        0 0 10px rgba(255, 122, 0, 0.3),
+        0 0 20px rgba(255, 122, 0, 0.2);
+      --glow-x: 50%;
+      --glow-y: 50%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+      display: inline-block;
+    }
+    
+    .hover-btn.primary {
+      border-color: #ff7a00;
+      background-color: rgba(0, 0, 0, 0.2);
+      color: #ff7a00;
+    }
+    
+    .hover-btn:hover {
+      box-shadow: 
+        0 3px 0 0 #ff7a00,
+        0 0 10px rgba(255, 122, 0, 0.5),
+        0 0 20px rgba(255, 122, 0, 0.4),
+        0 0 30px rgba(255, 122, 0, 0.3),
+        0 0 40px rgba(255, 122, 0, 0.2);
+      transform: translateY(-2px) translateX(-1px);
+      background:
+        radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(255,122,0,0.4) 0%, rgba(255,122,0,0.0) 60%);
+    }
+    
+    .hover-btn:focus {
+      outline: none;
+      box-shadow: 
+        0 0 10px rgba(255, 122, 0, 0.5),
+        0 0 20px rgba(255, 122, 0, 0.4),
+        inset -2px -2px rgba(255, 122, 0, 0.1);
+    }
+    
+    .featured-works {
+      padding: 2rem 0;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s forwards 1.2s;
+    }
+    
+    .featured-works h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+    
+    .work-preview {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .preview-item {
+      width: 200px;
+      height: 150px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .preview-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+    
+    .preview-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+    
+    .preview-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .preview-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      pointer-events: none;
+    }
+    
+    .preview-item .title {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: #fff;
+      z-index: 2;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: rgba(255, 122, 0, 0.3);
+      transform: translateY(-3px);
+    }
+    
+    .blurred-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: -1;
+      opacity: 0.5;
+    }
+    
+    .circle-1 {
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 122, 0, 0.3);
+      top: 10%;
+      left: 10%;
+      animation: float 8s infinite alternate ease-in-out;
+    }
+    
+    .circle-2 {
+      width: 250px;
+      height: 250px;
+      background: rgba(128, 0, 255, 0.2);
+      bottom: 20%;
+      right: 15%;
+      animation: float 10s infinite alternate-reverse ease-in-out;
+    }
+    
+    @keyframes float {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(20px, 20px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+      }
+      
+      .work-preview {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .preview-item {
+        width: 80%;
+        max-width: 300px;
+        height: 180px;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <div class="background-blur"></div>
 
   <div class="glass-navbar">
-  <a href="index.html" class="icon-btn logo-only" aria-label="User">
-    <img src="logo.gif" alt="Logo" />
-  </a>
+    <a href="index.html" class="icon-btn logo-only" aria-label="User">
+      <img src="logo.gif" alt="Logo" />
+    </a>
     <!-- ZUXX Text for Mobile -->
-  <span class="mobile-brand">Harshit</span>
-  
+    <span class="mobile-brand">Harshit</span>
+    
     <!-- Desktop Nav Links (now inside navbar) -->
     <div class="nav-links">
       <a href="index.html" class="nav-btn">Home</a>
@@ -42,6 +303,10 @@
 
   <!-- Main Content Glass Box -->
   <div class="content-box">
+    <!-- Background animated circles -->
+    <div class="blurred-circle circle-1"></div>
+    <div class="blurred-circle circle-2"></div>
+    
     <!-- Hero Section -->
     <div class="hero">
       <h1>
@@ -50,18 +315,62 @@
         <span class="starts-here">Starts Here</span>
         <span class="lol">!</span>
       </h1>
-      <a href="work/explore.html" class="hover-btn">Explore</a>
+      
+      <p class="hero-subtitle">
+        Transforming ideas into visual masterpieces through creative digital design and artistry
+      </p>
+      
+      <div class="cta-buttons">
+        <a href="work/explore.html" class="hover-btn primary">Explore</a>
+        <a href="work.html" class="hover-btn">View Work</a>
+      </div>
+    </div>
+    
+    <!-- Featured Works Preview -->
+    <div class="featured-works">
+      <h2>Featured Works</h2>
+      <div class="work-preview">
+        <a href="work/posters.html" class="preview-item">
+          <img src="work/posters/posters.jpg" alt="Custom Posters">
+          <span class="title">Posters</span>
+        </a>
+        <a href="work/adver.html" class="preview-item">
+          <img src="work/Advertisments/adver.jpg" alt="Advertisements">
+          <span class="title">Ads</span>
+        </a>
+        <a href="work/thumbnail.html" class="preview-item">
+          <img src="work/thumbnails/thumbnail bg.jpg" alt="Thumbnails">
+          <span class="title">Thumbnails</span>
+        </a>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer>
-      <p>© 2025 Zuxxefied</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/zuxxefied" class="social-link">IG</a>
+        <a href="https://www.behance.net/zuxxefied" class="social-link">BE</a>
+        <a href="https://www.instagram.com/harshitbeinglazy" class="social-link">IG</a>
+      </div>
+      <p>© 2025 Zuxxefied | All Rights Reserved</p>
     </footer>
   </div>
 
-  <!-- Load shared and home page scripts deferred -->
   <script src="common.js" defer></script>
   <script src="home.js" defer></script>
+  <script>
+    // Add mouse movement effect to buttons
+    document.querySelectorAll('.hover-btn').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        btn.style.setProperty('--glow-x', `${x}%`);
+        btn.style.setProperty('--glow-y', `${y}%`);
+      });
+    });
+  </script>
 
 </body>
 </html>
