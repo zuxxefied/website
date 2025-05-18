@@ -8,6 +8,28 @@
   <link rel="stylesheet" href="../style.css" />
   <link rel="preload" href="../logo.gif" as="image" />
   <style>
+
+      .hero3-subtitle {
+      padding-top: 50px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(1rem, 1vw, 1.5rem);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      color: rgba(255, 255, 255, 0.8);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 1s forwards 0.6s;
+    }
+    
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     #lightbox {
       display: none !important;
       position: fixed;
@@ -66,7 +88,7 @@
     </div>
 
     <h1 class="center-text">Posters</h1>
-    <p class="poster-exp">
+    <p class="hero3-subtitle">
       I specialize in designing impactful and visually engaging posters that effectively communicate ideas, promotions, and brand messaging. With a strong foundation in layout, typography, and color theory, I create poster designs that not only grab attention but also deliver a clear narrative. Whether it’s for events, product launches, social media, or print, my posters are tailored to the target audience while maintaining a strong visual identity. I focus on blending creativity with purpose, ensuring each design tells a compelling story at a glance.
     </p>
     <div id="poster-container" class="poster-gallery"></div>

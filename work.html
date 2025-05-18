@@ -8,41 +8,309 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Preload logo for faster render -->
   <link rel="preload" href="Logopng.png" as="image" />
+
+  <style>
+    /* Additional styles for the enhanced home page */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      min-height: 80vh;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.9;
+      margin-bottom: 2rem;
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: fadeUp 1s forwards 0.3s;
+    }
+    
+    .hero-subtitle {
+      padding-top: 50px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      margin-bottom: 3rem;
+      max-width: 600px;
+      color: rgba(255, 255, 255, 0.8);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 1s forwards 0.6s;
+    }
+    
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      opacity: 0;
+      animation: fadeIn 1s forwards 0.9s;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .hover-btn {
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0.15);
+      color: #ff7a00;
+      border-radius: 10em;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 1em 2em;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      margin-top: 20px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      text-shadow: 
+        0 0 10px rgba(255, 122, 0, 0.3),
+        0 0 20px rgba(255, 122, 0, 0.2);
+      --glow-x: 50%;
+      --glow-y: 50%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+      display: inline-block;
+    }
+    
+    .hover-btn.primary {
+      border-color: #ff7a00;
+      background-color: rgba(0, 0, 0, 0.2);
+      color: #ff7a00;
+    }
+    
+    .hover-btn:hover {
+      box-shadow: 
+        0 3px 0 0 #ff7a00,
+        0 0 10px rgba(255, 122, 0, 0.5),
+        0 0 20px rgba(255, 122, 0, 0.4),
+        0 0 30px rgba(255, 122, 0, 0.3),
+        0 0 40px rgba(255, 122, 0, 0.2);
+      transform: translateY(-2px) translateX(-1px);
+      background:
+        radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(255,122,0,0.4) 0%, rgba(255,122,0,0.0) 60%);
+    }
+    
+    .hover-btn:focus {
+      outline: none;
+      box-shadow: 
+        0 0 10px rgba(255, 122, 0, 0.5),
+        0 0 20px rgba(255, 122, 0, 0.4),
+        inset -2px -2px rgba(255, 122, 0, 0.1);
+    }
+    
+    .featured-works {
+      padding: 2rem 0;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s forwards 1.2s;
+    }
+    
+    .featured-works h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+    
+    .work-preview {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .preview-item {
+      width: 200px;
+      height: 150px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .preview-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+    
+    .preview-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+    
+    .preview-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .preview-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      pointer-events: none;
+    }
+    
+    .preview-item .title {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: #fff;
+      z-index: 2;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: rgba(255, 122, 0, 0.3);
+      transform: translateY(-3px);
+    }
+    
+    .blurred-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: -1;
+      opacity: 0.5;
+    }
+    
+    .circle-1 {
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 122, 0, 0.3);
+      top: 10%;
+      left: 10%;
+      animation: float 8s infinite alternate ease-in-out;
+    }
+    
+    .circle-2 {
+      width: 250px;
+      height: 250px;
+      background: rgba(128, 0, 255, 0.2);
+      bottom: 20%;
+      right: 15%;
+      animation: float 10s infinite alternate-reverse ease-in-out;
+    }
+    
+    @keyframes float {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(20px, 20px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+      }
+      
+      .work-preview {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .preview-item {
+        width: 80%;
+        max-width: 300px;
+        height: 180px;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <div class="content-box work-bg no-bg">
     <h1 class="center-text" id="scramble-title">My Work</h1>
-  <div class="background-blur"></div>
+    <div class="background-blur"></div>
 
     <div class="glass-navbar">
-  <a href="index.html" class="icon-btn logo-only" aria-label="User">
-    <img src="logo.gif" alt="Logo" />
-  </a>
-  
-    <!-- ZUXX Text for Mobile -->
-  <span class="mobile-brand">Harshit</span>
-    <!-- Desktop Nav Links (now inside navbar) -->
-    <div class="nav-links">
-      <a href="index.html" class="nav-btn">Home</a>
-      <a href="work.html" class="nav-btn">Work</a>
-      <button class="nav-btn">Commission</button>
-      <button class="nav-btn">Contact</button>
-    </div>  
+      <a href="index.html" class="icon-btn logo-only" aria-label="User">
+        <img src="logo.gif" alt="Logo" />
+      </a>
+      
+      <!-- ZUXX Text for Mobile -->
+      <span class="mobile-brand">Harshit</span>
+      
+      <!-- Desktop Nav Links (now inside navbar) -->
+      <div class="nav-links">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="work.html" class="nav-btn">Work</a>
+        <button class="nav-btn">Commission</button>
+        <button class="nav-btn">Contact</button>
+      </div>  
 
-    <!-- Mobile Menu Toggle Button -->
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <!-- Mobile Menu Toggle Button -->
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html" class="nav-btn">Home</a>
-      <a href="work.html" class="nav-btn">Work</a>
-      <button class="nav-btn">Commission</button>
-      <button class="nav-btn">Contact</button>
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="work.html" class="nav-btn">Work</a>
+        <button class="nav-btn">Commission</button>
+        <button class="nav-btn">Contact</button>
+      </div>
     </div>
-  </div>
 
-    
+    <p class="hero-subtitle">
+        Make youreself comfortable and enjoy the work I have done.
+      </p>
 
     <!-- Work Showcase Section -->
     <div class="work-gallery">
@@ -52,6 +320,7 @@
           <img src="work/thumbnails/thumbnail bg.jpg" alt="Thumbnail 1" />
         </div>
       </a>
+      
       <!-- Posters button -->
       <a href="work/posters.html" class="work-item-link">
         <div class="work-item">
@@ -59,21 +328,29 @@
         </div>
       </a>
 
+      <!-- Advertisement button - Fixed missing closing tag -->
       <a href="work/adver.html" class="work-item-link">
         <div class="work-item">
           <img src="work/Advertisments/adver.jpg" alt="adver 1" />
         </div>
+      </a>
       <!-- Add more items as needed -->
     </div>
 
+
     <footer>
-      <p>© 2025 Zuxxefied</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/zuxxefied" class="social-link">IG</a>
+        <a href="https://www.behance.net/zuxxefied" class="social-link">BE</a>
+        <a href="https://www.instagram.com/harshitbeinglazy" class="social-link">IG</a>
+      </div>
+      <p>© 2025 Zuxxefied | All Rights Reserved</p>
     </footer>
   </div>
 
   <!-- Load shared and work page scripts deferred -->
   <script src="common.js" defer></script>
   <script src="work/work.js" defer></script>
-
+  
 </body>
 </html>

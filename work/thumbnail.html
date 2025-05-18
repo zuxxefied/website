@@ -8,6 +8,28 @@
   <link rel="stylesheet" href="../style.css" />
   <link rel="preload" href="../logo.gif" as="image" />
   <style>
+
+    .hero2-subtitle {
+      padding-top: 50px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(1rem, 1vw, 1.5rem);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      color: rgba(255, 255, 255, 0.8);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 1s forwards 0.6s;
+    }
+    
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     #lightbox {
       display: none !important;
       position: fixed;
@@ -66,7 +88,7 @@
     </div>
 
     <h1 class="center-text">Thumbnails</h1>
-    <p class="thumb-exp">
+    <p class="hero2-subtitle">
       I have extensive experience in designing eye-catching and high-performing thumbnails tailored for digital platforms like YouTube and Instagram. Over the years, I've developed a strong understanding of visual hierarchy, composition, and how to use color, typography, and imagery to instantly grab attention and drive clicks. Whether it's for entertainment, educational, or promotional content, I focus on creating thumbnails that not only reflect the brand's identity but also enhance viewer engagement. My designs are optimized for both desktop and mobile, ensuring clarity and impact across devices.
     </p>
     <div id="thumbnails-container" class="thumbnails-gallery"></div>
