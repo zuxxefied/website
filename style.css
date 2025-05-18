@@ -1,4 +1,8 @@
+/* Fixed CSS for advertisements page */
 /* ===== Reset and Base Styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +12,9 @@
 :root {
   --main-bg: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
+
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body {
   font-family: 'Glossary', sans-serif;
@@ -41,12 +48,13 @@ body {
   font-size: 1.2rem;
   color: white;
   font-weight: bold;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Show on mobile */
 @media (max-width: 768px) {
   .mobile-brand {
-    font-family: 'Glossary', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     display: inline-block;
     margin-left: auto;
@@ -77,7 +85,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: start;
-  padding: 12px 24px;
+  padding: 8px 12px;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -91,16 +99,19 @@ body {
   max-width: 550px;
   flex-wrap: nowrap;
   overflow: visible;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-links {
   display: flex;
   gap: 12px;
   flex-shrink: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* ===== Nav Buttons ===== */
 .nav-btn {
+  font-family: 'Poppins', sans-serif;
   flex-shrink: 0;
   white-space: nowrap;
   background-color: rgba(255, 255, 255, 0.08);
@@ -111,14 +122,15 @@ body {
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 a.nav-btn {
   text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-btn:hover {
-  font-family: 'Glossary', serif;
   background-color: rgba(255, 122, 0, 0.15);
   box-shadow:
     0 0 6px rgba(255, 122, 0, 0.5),
@@ -163,7 +175,7 @@ a.nav-btn {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('work/Advertisments/adver.jpg');
+  background-image: url('work/Advertisements/adver.jpg'); /* Fixed spelling */
   background-size: cover;
   background-position: center;
   filter: blur(8px);
@@ -260,6 +272,7 @@ body::before {
 
 /* ===== Button Styles ===== */
 .hover-btn {
+  font-family: 'Poppins', sans-serif;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0.15);
   color: #ff7a00;
@@ -406,6 +419,7 @@ footer {
   margin-bottom: 20px;
   font-size: 14px;
   color: #ff7a00;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* ===== work ===== */
@@ -440,6 +454,7 @@ footer {
   text-align: center;
   max-width: 800px; /* controls the line length for wrapping */
   padding: 1rem 1rem;  /* optional: adds breathing room on mobile */
+  font-family: 'Poppins', sans-serif;
 }
 
 .adver-exp {
@@ -452,6 +467,7 @@ footer {
   text-align: center;
   max-width: 800px; /* controls the line length for wrapping */
   padding: 1rem 1rem;  /* optional: adds breathing room on mobile */
+  font-family: 'Poppins', sans-serif;
 }
 
 .thumb-exp {
@@ -464,6 +480,7 @@ footer {
   text-align: center;
   max-width: 800px; /* controls the line length for wrapping */
   padding: 1rem 1rem;  /* optional: adds breathing room on mobile */
+  font-family: 'Poppins', sans-serif;
 }
 .center-text {
   -webkit-text-stroke: #ffffff 0.2px;
@@ -493,7 +510,6 @@ footer {
 }
 
 .work-gallery {
-  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
@@ -507,19 +523,30 @@ footer {
   justify-items: center;
   margin-top: 40px;
 }
+
+/* Fixed advertisement gallery styling */
+.adver-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
 .adver-gallery .work-item {
   aspect-ratio: 1 / 1;
   max-width: 240px;
   width: 100%;
 }
+
 .adver-gallery .work-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
 }
 
 .thumbnails-gallery {
-  
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 32px;
@@ -579,6 +606,7 @@ footer {
   backdrop-filter: blur(4px);
   z-index: 2;
   border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .adver-overlay {
@@ -597,6 +625,7 @@ footer {
   transition: opacity 0.3s ease;
   text-align: center;
   pointer-events: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .thumbnails-overlay {
@@ -616,6 +645,7 @@ footer {
   backdrop-filter: blur(4px);
   z-index: 2;
   border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .work-item:hover .adver-overlay {
@@ -646,6 +676,7 @@ footer {
   transform: scale(1.05); /* Slight zoom is okay */
 }
 
+/* Fixed lightbox styles */
 #lightbox {
   display: none;
   position: fixed;
@@ -660,20 +691,32 @@ footer {
 }
 
 #lightbox.show {
-  display: flex;
+  display: flex !important;
 }
 
 #lightbox-img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 90vw;
+  max-height: 90vh;
   box-shadow: 0 0 32px #ff7a00;
   border-radius: 16px;
 }
+
+/* Added close button styling for lightbox */
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10001;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
 .work-item:hover {  
   z-index: 10;
 }
-
-
 
 .work-item img,
 .blur-target,
@@ -701,8 +744,7 @@ footer {
   box-sizing: border-box;
 }
 
-/* Any other styles you want to keep unchanged */
-
+/* Fixed adver-container styling */
 #adver-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -715,6 +757,7 @@ footer {
   font-size: 1.1rem;
   margin: 0;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 .work-item-link {
@@ -726,10 +769,10 @@ footer {
 /* ===== Mobile Navbar Fix ===== */
 @media (max-width: 768px) {
   .glass-navbar {
-  justify-content: center;
-  padding: 12px 16px;
-  flex-wrap: wrap;
-}
+    justify-content: center;
+    padding: 4px 12px;
+    flex-wrap: wrap;
+  }
 
   .nav-links {
     display: none;
@@ -762,6 +805,7 @@ footer {
   z-index: 1100; /* Ensure it's above other elements */
   position: relative; /* Helps with stacking */
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .mobile-menu {
@@ -775,6 +819,7 @@ footer {
   padding: 15px;
   border-radius: 8px;
   z-index: 10;
+  font-family: 'Poppins', sans-serif;
 }
 
 .mobile-menu.active {
@@ -790,6 +835,7 @@ footer {
   text-align: left;
   cursor: pointer;
   text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 @media (max-width: 768px) {

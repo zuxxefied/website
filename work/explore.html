@@ -8,6 +8,179 @@
   <link rel="stylesheet" href="../style.css" />
   <!-- Preload logo -->
   <link rel="preload" href="../logo.gif" as="image" />
+  <style>
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 900px;
+      margin: 60px auto;
+      gap: 40px;
+      padding: 0 20px;
+    }
+    
+    @media (min-width: 768px) {
+      .profile-section {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+    
+    .profile-photo {
+      width: 280px;
+      height: 280px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid rgba(255, 122, 0, 0.5);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .profile-photo:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+    
+    .profile-content {
+      flex: 1;
+      color: #fff;
+    }
+    
+    .profile-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #fff, #ff7a00);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    
+    .profile-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 30px 0;
+    }
+    
+    .skill-item {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    
+    .skill-item:hover {
+      background: rgba(255, 122, 0, 0.15);
+      transform: translateY(-3px);
+    }
+    
+    .skill-icon {
+      margin-right: 8px;
+      color: #ff7a00;
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+    
+    .action-btn {
+      padding: 10px 24px;
+      background: rgba(255, 122, 0, 0.2);
+      border: 1px solid #ff7a00;
+      color: #fff;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .action-btn:hover {
+      background: rgba(255, 122, 0, 0.4);
+      transform: translateY(-2px);
+    }
+    
+    .portfolio-preview {
+      margin: 60px auto;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #fff;
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .portfolio-item {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .portfolio-item a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter 0.3s ease;
+    }
+    
+    .portfolio-item:hover img {
+      filter: brightness(0.7);
+    }
+    
+    .portfolio-item .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .portfolio-item:hover .overlay {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
   <div class="background-blur"></div>
@@ -19,14 +192,14 @@
       </a>
       <span class="mobile-brand">Harshit</span>
       <div class="nav-links">
-        <button class="nav-btn">Home</button>
+        <a href="../index.html" class="nav-btn">Home</a>
         <a href="../work.html" class="nav-btn">Work</a>
         <button class="nav-btn">Commission</button>
         <button class="nav-btn">Contact</button>
       </div>
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
       <div class="mobile-menu" id="mobileMenu">
-        <button class="nav-btn">Home</button>
+        <a href="../index.html" class="nav-btn">Home</a>
         <a href="../work.html" class="nav-btn">Work</a>
         <button class="nav-btn">Commission</button>
         <button class="nav-btn">Contact</button>
@@ -34,34 +207,83 @@
     </div>
 
     <div class="center-text" style="margin-top:40px;">Explore</div>
-    <div class="about-section" style="color: #fff;max-width:600px;margin:40px auto 0 auto;text-align:center;">
-      <h2>Hello, I'm Zuxxefied!</h2>
-      <p>
-        Welcome to my creative space.<br>
-        I’m a designer, artist, and digital creator.<br>
-        I love making posters, digital art, and unique visual experiences.<br>
-        <br>
-        On this page, you’ll find more about what I do, my inspirations, and how I can help bring your ideas to life.<br>
-        <br>
-        <strong>What I do:</strong>
-      </p>
-      <ul style="text-align:left;display:inline-block;">
-        <li>Poster Design</li>
-        <li>Digital Art & Illustration</li>
-        <li>Branding & Visual Identity</li>
-        <li>Creative Commissions</li>
-        <li>Experimental Visuals</li>
-      </ul>
-      <p style="margin-top:24px;">
-        Want to work together or just say hi?<br>
-        <a href="zuxx@zuxxefied.site" style="color:#ff7a00;">Contact me!</a>
-      </p>
-    </div>
+    
+    <section class="profile-section">
+      <img src="../work/myself.png" alt="Harshit - Designer & Digital Artist" class="profile-photo">
+      
+      <div class="profile-content">
+        <h2>Hello, I'm Harshit!</h2>
+        <p>
+          Welcome to my creative universe. I'm a passionate designer and digital artist with a love for creating visually striking experiences that leave a lasting impression.
+        </p>
+        <p>
+          My work explores the intersection of bold aesthetics, contemporary design principles, and digital innovation. Whether it's crafting eye-catching posters, developing brand identities, or creating immersive digital art, I bring ideas to life with a unique flair.
+        </p>
+        
+        <div class="skills-grid">
+          <div class="skill-item">
+            <span class="skill-icon">✦</span> Poster Design
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">✦</span> Digital Art
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">✦</span> Branding
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">✦</span> UI/UX Design
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">✦</span> Illustration
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">✦</span> Animation
+          </div>
+        </div>
+        
+        <div class="action-buttons">
+          <a href="../work.html" class="action-btn">View My Work</a>
+          <a href="#" class="action-btn">Start a Project</a>
+          <a href="mailto:zuxx@zuxxefied.site" class="action-btn">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="portfolio-preview">
+      <h3 class="section-title">Featured Works</h3>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <a href="../work/posters.html">
+            <img src="../work/posters/posters.jpg" alt="Custom Posters">
+            <div class="overlay">
+              <h4>Custom Posters</h4>
+              <p>Update 2025</p>
+            </div>
+          </a>
+        </div>
+        <div class="portfolio-item">
+          <a href="../work/adver.html">
+            <img src="../work/Advertisments/adver.jpg" alt="Custom Advertisments">
+            <div class="overlay">
+              <h4>Custom Advertisments</h4>
+              <p>Update 2025</p>
+            </div>
+          </a>
+        </div>
+        <div class="portfolio-item">
+          <a href="../work/thumbnail.html">
+            <img src="../work/thumbnails/thumbnail bg.jpg" alt="Custom Thumbnails">
+            <div class="overlay">
+              <h4>Custom Thumbnails</h4>
+              <p>Update 2025</p>
+            </div>
+          </a>
+    </section>
+
   </div>
 
   <script src="../common.js" defer></script>
   <script src="../explore.js" defer></script>
-  
-
 </body>
 </html>
