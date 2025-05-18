@@ -1,8 +1,4 @@
-// Initialize EmailJS
-(function() {
-    // Replace with your EmailJS user ID
-    emailjs.init("HriZKuHYDSzvKnppaHBXm");
-})();
+
 
 // Portfolio items data - you can replace with actual data
 const portfolioItems = [
@@ -53,6 +49,8 @@ const portfolioItems = [
 
 // Initialize page when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    emailjs.init("HriZKuHYDSzvKnppaHBXm"); // Initialize EmailJS with your user ID
+
     loadPortfolioItems('all');
     setupServiceOptions();
     setupPricingButtons();
@@ -220,7 +218,7 @@ function openImageViewer(src, title, id) {
     };
 }
 
-// Form submission with EmailJS
+// Form submission with EmailJS - fixed version
 function setupFormSubmission() {
     const form = document.getElementById('commissionForm');
     const successMessage = document.getElementById('successMessage');
@@ -241,7 +239,7 @@ function setupFormSubmission() {
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
-                serviceType: serviceType,
+                service_type: serviceType, // Make sure these fields match your EmailJS template parameters
                 package: document.getElementById('package').value,
                 description: document.getElementById('description').value,
                 deadline: document.getElementById('deadline').value || 'No specific deadline',
@@ -254,10 +252,10 @@ function setupFormSubmission() {
             submitButton.textContent = 'Sending...';
             submitButton.disabled = true;
             
-            // Send the email using EmailJS
+            // Send the email using EmailJS with proper error handling
             emailjs.send(
-                'service_ju4p16o', // Replace with your EmailJS service ID
-                'template_wxcsu9l', // Replace with your EmailJS template ID
+                'service_9jaijii', // Replace with your EmailJS service ID
+                'template_smyfmc9', // Replace with your EmailJS template ID
                 formData
             )
             .then(function(response) {
@@ -273,7 +271,7 @@ function setupFormSubmission() {
                 }, 5000);
             })
             .catch(function(error) {
-                console.error('FAILED...', error);
+                console.log('FAILED...', error);
                 errorMessage.style.display = 'block';
                 successMessage.style.display = 'none';
             })
@@ -282,44 +280,6 @@ function setupFormSubmission() {
                 submitButton.textContent = originalButtonText;
                 submitButton.disabled = false;
             });
-        });
-    }
-}
-
-// Show modal with custom message
-function showModal(title, message) {
-    const modal = document.getElementById('alertModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalContent = document.getElementById('modalContent');
-    
-    modalTitle.textContent = title;
-    modalContent.textContent = message;
-    modal.classList.add('show');
-    
-    document.getElementById('modalClose').addEventListener('click', function() {
-        modal.classList.remove('show');
-    });
-}
-
-// Setup section animations on scroll
-function setupSectionAnimations() {
-    const sections = document.querySelectorAll('.section-transition');
-    
-    // Initial check for elements in viewport
-    checkSections();
-    
-    // Check sections on scroll
-    window.addEventListener('scroll', checkSections);
-    
-    function checkSections() {
-        const triggerBottom = window.innerHeight * 0.8;
-        
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            
-            if (sectionTop < triggerBottom) {
-                section.classList.add('visible');
-            }
         });
     }
 }
