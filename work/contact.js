@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             // Send email using EmailJS
-            emailjs.send('dservice_9jaijii', 'template_6bya9amm', {
+            emailjs.send('dservice_9jaijii', 'template_6bya9am', {
                 from_name: formData.name,
                 reply_to: formData.email,
                 subject: formData.subject,

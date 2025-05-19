@@ -229,7 +229,7 @@ function setupFormSubmission() {
         submitButton.textContent = "Sending...";
         submitButton.disabled = true;
 
-        emailjs.send("service_9jaijii", "template_6bya9am", formData)
+        emailjs.send("service_9jaijii", "template_smyfmc9", formData)
             .then(function () {
                 successMessage.style.display = "block";
                 errorMessage.style.display = "none";
