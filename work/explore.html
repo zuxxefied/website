@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="../logopng.ico" type="image/x-icon">
-
   <meta charset="UTF-8" />
   <meta name="theme-color" content="#0f0f0f" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,46 +10,51 @@
   <!-- Preload logo -->
   <link rel="preload" href="../logo.gif" as="image" />
   <style>
-    .profile-section {
+    .profile-hero {
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 60px auto;
-      gap: 40px;
       padding: 0 20px;
+      position: relative;
     }
     
-    @media (min-width: 768px) {
-      .profile-section {
-        flex-direction: row;
-        text-align: left;
+    .profile-photo-container {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 40px;
+      position: relative;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    
+      .profile-photo {
+        width: 125%;
+        height: 500px;
+        border-radius: 15px;
+        object-fit: cover;
+        border: 3px solid rgba(255, 122, 0, 0.6);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-left: -12.5%;
       }
-    }
     
-    .profile-photo {
-      width: 280px;
-      height: 280px;
-      border-radius: 10px;
-      object-fit: cover;
-      border: 2px solid rgba(255, 122, 0, 0.5);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
     
     .profile-photo:hover {
       transform: scale(1.02);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
     
     .profile-content {
-      flex: 1;
+      width: 100%;
+      max-width: 900px;
       color: #fff;
+      text-align: center;
     }
     
     .profile-content h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      font-size: 3rem;
+      margin-bottom: 30px;
       background: linear-gradient(90deg, #fff, #ff7a00);
       background-clip: text;
       -webkit-background-clip: text;
@@ -59,17 +62,26 @@
     }
     
     .profile-content p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 25px;
       color: rgba(255, 255, 255, 0.9);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 25px;
     }
     
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 15px;
-      margin: 30px 0;
+      margin: 40px 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
     
     .skill-item {
@@ -78,6 +90,7 @@
       padding: 12px 15px;
       display: flex;
       align-items: center;
+      justify-content: center;
       transition: all 0.2s ease;
     }
     
@@ -94,16 +107,17 @@
     .action-buttons {
       display: flex;
       gap: 15px;
-      margin-top: 25px;
+      margin-top: 30px;
       flex-wrap: wrap;
+      justify-content: center;
     }
     
     .action-btn {
-      padding: 10px 24px;
+      padding: 12px 28px;
       background: rgba(255, 122, 0, 0.2);
       border: 1px solid #ff7a00;
       color: #fff;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 500;
       transition: all 0.3s ease;
       cursor: pointer;
@@ -119,14 +133,14 @@
     }
     
     .portfolio-preview {
-      margin: 60px auto;
+      margin: 80px auto;
       max-width: 900px;
       padding: 0 20px;
     }
     
     .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 30px;
+      font-size: 2rem;
+      margin-bottom: 40px;
       text-align: center;
       color: #fff;
     }
@@ -183,7 +197,49 @@
     .portfolio-item:hover .overlay {
       opacity: 1;
     }
-           /* Footer styling */
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .profile-photo {
+        height: 300px;
+      }
+      
+      .profile-content h2 {
+        font-size: 2.2rem;
+      }
+      
+      .profile-content p {
+        font-size: 1.1rem;
+      }
+      
+      .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 12px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .profile-photo {
+        height: 250px;
+      }
+      
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .action-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .action-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+      }
+    }
+
+            /* Footer styling */
         footer {
             margin-top: 60px;
             text-align: center;
@@ -220,6 +276,21 @@
             box-shadow: 0 0 10px rgba(255, 122, 0, 0.3);
             border-color: rgba(255, 122, 0, 0.3);
         }
+
+
+        
+        .contact-details p, .contact-details a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .contact-details a:hover {
+            color: #ff7a00;
+            text-shadow: 0 0 5px rgba(255, 122, 0, 0.3);
+        }
+        
   </style>
 </head>
 <body>
@@ -234,31 +305,57 @@
       <div class="nav-links">
         <a href="../index.html" class="nav-btn">Home</a>
         <a href="../work.html" class="nav-btn">Work</a>
-        <a href="commission.html" class="nav-btn active">Commission</a>
-        <a href="contact.html" class="nav-btn">Contact</a>
+        <button class="nav-btn">Commission</button>
+        <button class="nav-btn">Contact</button>
       </div>
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
       <div class="mobile-menu" id="mobileMenu">
         <a href="../index.html" class="nav-btn">Home</a>
         <a href="../work.html" class="nav-btn">Work</a>
-        <a href="commission.html">Commission</a>
-        <a href="contact.html" class="nav-btn">Contact</a>
+        <button class="nav-btn">Commission</button>
+        <button class="nav-btn">Contact</button>
       </div>
     </div>
 
-    <div class="center-text" style="margin-top:40px;">Explore</div>
+    <div class="center-text">Explore</div>
     
-    <section class="profile-section">
-      <img src="../work/myself.png" alt="Harshit - Designer & Digital Artist" class="profile-photo">
+    <section class="profile-hero">
+      <div class="profile-photo-container" id="profilePhoto">
+        <img src="../work/myself.png" alt="Harshit - Designer & Digital Artist" class="profile-photo">
+      </div>
       
       <div class="profile-content">
+        <div class="contact-details">
         <h2>Hello, I'm Harshit!</h2>
-        <p>
-          Welcome to my creative universe. I'm a passionate designer and digital artist with a love for creating visually striking experiences that leave a lasting impression.
-        </p>
-        <p>
-          My work explores the intersection of bold aesthetics, contemporary design principles, and digital innovation. Whether it's crafting eye-catching posters, developing brand identities, or creating immersive digital art, I bring ideas to life with a unique flair.
-        </p>
+        <p style="margin-bottom: 1.5rem;">
+        A <strong>21-year-old visual designer and digital artist</strong> from Haryana, India, passionate about bold aesthetics, purposeful design, and visual storytelling that makes people pause and feel.
+      </p>
+
+      <p style="margin-bottom: 1.5rem;">
+        Since <strong>2019</strong>, I’ve been working as a freelance designer, helping brands, creators, and businesses shape their identity through high-impact visuals. My expertise spans <strong>graphic design</strong>, <strong>branding</strong>, <strong>UI/UX</strong>, and <strong>digital art</strong>, powered by tools like 
+        <strong>Adobe Creative Suite, Figma, HTML/CSS</strong>, and cutting-edge AI platforms like <strong>Midjourney, Firefly, and ChatGPT</strong>.
+      </p>
+
+      <p style="margin-bottom: 1.5rem;">
+        In <strong>2022</strong>, 
+        <a href="https://www.linkedin.com/in/ayush-jain-007-frkr/"><strong>Ayush</strong></a> and I co-founded 
+        <a href="https://nyxdyllon.com"><strong>NYXDYLLON</strong></a> — a streetwear-focused clothing brand that fuses 
+        <strong>art, attitude, and culture</strong> into every thread. At NYXDYLLON, I lead the creative direction — turning concepts into visuals, visuals into identity, and identity into wearable expression. For me, design doesn’t stop on a screen — it lives on fabric, in motion, in moments.
+      </p>
+
+      <p style="margin-bottom: 1.5rem;">
+        I aim to blend <strong>clarity, creativity, and meaning</strong> in every piece of work.
+      </p>
+
+      <p style="margin-bottom: 1.5rem;">
+        I believe in staying <strong>fluid</strong> — adapting to trends without losing authenticity, and constantly experimenting with new ideas, tools, and formats to keep things fresh and human.
+      </p>
+
+      <p style="margin-bottom: 1.5rem;">
+        This site is my creative sandbox — a curated space to explore my design journey, ideas, and collaborations.<br>
+        <strong>Let’s build something that resonates.</strong>
+      </p>
+      </div>
         
         <div class="skills-grid">
           <div class="skill-item">
@@ -283,7 +380,7 @@
         
         <div class="action-buttons">
           <a href="../work.html" class="action-btn">View My Work</a>
-          <a href="../work/commission.html" class="action-btn">Start a Project</a>
+          <a href="#" class="action-btn">Start a Project</a>
           <a href="mailto:zuxx@zuxxefied.site" class="action-btn">Get in Touch</a>
         </div>
       </div>
@@ -319,6 +416,8 @@
               <p>Update 2025</p>
             </div>
           </a>
+        </div>
+      </div>
     </section>
 
   </div>
@@ -344,9 +443,45 @@
             </div>
             <p>© 2025 Harshit/Zuxxefied | All Rights Reserved</p>
         </footer>
-    </div>
 
   <script src="../common.js" defer></script>
-  <script src="../explore.js" defer></script>
+  <script>
+    // Scroll fade effect for profile photo
+    function handleScrollFade() {
+      const profilePhoto = document.getElementById('profilePhoto');
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      
+      // Calculate fade based on scroll position
+      // Image will start fading after 200px scroll and disappear completely after 800px (4 scroll "sections")
+      const fadeStart = 200;
+      const fadeEnd = 800;
+      
+      if (scrollY <= fadeStart) {
+        // No fade yet
+        profilePhoto.style.opacity = '1';
+        profilePhoto.style.transform = 'translateY(0px) scale(1)';
+      } else if (scrollY >= fadeEnd) {
+        // Completely faded
+        profilePhoto.style.opacity = '0';
+        profilePhoto.style.transform = 'translateY(-50px) scale(0.9)';
+      } else {
+        // Gradual fade
+        const fadeProgress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
+        const opacity = 1 - fadeProgress;
+        const translateY = -50 * fadeProgress;
+        const scale = 1 - (0.1 * fadeProgress);
+        
+        profilePhoto.style.opacity = opacity;
+        profilePhoto.style.transform = `translateY(${translateY}px) scale(${scale})`;
+      }
+    }
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScrollFade);
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', handleScrollFade);
+  </script>
 </body>
 </html>
